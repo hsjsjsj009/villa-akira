@@ -6,8 +6,25 @@ import { ThemeProvider } from "styled-components";
 import { theme } from "./theme";
 import { routes } from "./routes";
 import { AppContainer } from "./style";
+import Navbar from "../../components/Navbar";
+import { changeBarColor, changeInnerColor } from "../../globalActions";
+import SmoothScroll from "smooth-scroll/dist/smooth-scroll";
 
 class App extends React.Component {
+  componentDidMount() {
+    let scroll = new SmoothScroll('a[href*="#"]', {
+      speed: 700,
+      speedAsDuration: true
+    });
+    window.onscroll = () => {
+      if (document.documentElement.scrollTop > 50) {
+        this.props.changeBarColor(true);
+      } else {
+        this.props.changeBarColor(false);
+      }
+    };
+  }
+
   render() {
     console.log();
     const pages = routes.map(route => (
@@ -17,9 +34,12 @@ class App extends React.Component {
         path={route.path}
       />
     ));
-
     return (
       <ThemeProvider theme={theme}>
+        <Navbar
+          changeColor={this.props.changeColor}
+          changeBar={this.props.changeBar}
+        />
         <AppContainer>
           <Switch>{pages}</Switch>
         </AppContainer>
@@ -28,14 +48,22 @@ class App extends React.Component {
   }
 }
 
-// function mapStateToProps(state) {
-//   return {};
-// }
-
-function mapDispatchToProps(dispatch) {
+function mapStateToProps(state) {
   return {
-    dispatch
+    changeColor: state.global.changeInnerColor,
+    changeBar: state.global.changeBarColor
   };
 }
 
-export default withRouter(connect(null, mapDispatchToProps)(App));
+function mapDispatchToProps(dispatch) {
+  return {
+    changeBarColor: bool => {
+      dispatch(changeBarColor(bool));
+    },
+    changeInnerColor: bool => {
+      dispatch(changeInnerColor(bool));
+    }
+  };
+}
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

@@ -1,0 +1,42 @@
+#landing-image {
+  position: absolute;
+  z-index: -2;
+  @media screen and (min-width: 1024px) {
+    bottom: 0;
+    width: 100vw;
+  }
+  @media screen and (min-width: 1440px) {
+    height: auto;
+    width: 100vw;
+    bottom: 0;
+  }
+}
+
+#landing-image-container {
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 100vh;
+    background-image: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.0895522) 70%,
+      #ffffff 100%
+    );
+  }
+}
+
+#book-now {
+  & > a {
+    color: #46564a;
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    &:hover {
+      text-decoration: none;
+      color: #46564a;
+    }
+  }
+}
