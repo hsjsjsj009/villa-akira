@@ -1,8 +1,13 @@
 #landing-image {
   position: absolute;
   z-index: -2;
+  @media screen and (min-width: 800px) {
+    height: 100vh;
+    width: auto;
+  }
   @media screen and (min-width: 1024px) {
     bottom: 0;
+    height: auto;
     width: 100vw;
   }
   @media screen and (min-width: 1440px) {

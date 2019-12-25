@@ -6,6 +6,7 @@ import { HomeContainer } from "./style";
 import { ready } from "./actions";
 import LandingPage from "../../components/LandingPage";
 import About from "../../components/About";
+import Host from "../../components/Host";
 
 class Home extends React.Component {
   render() {
@@ -13,6 +14,7 @@ class Home extends React.Component {
       <HomeContainer>
         <LandingPage />
         <About />
+        <Host />
       </HomeContainer>
     );
   }
