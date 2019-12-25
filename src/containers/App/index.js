@@ -3,16 +3,16 @@ import { Switch, Route, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { ThemeProvider } from "styled-components";
 
+import SmoothScroll from "smooth-scroll/dist/smooth-scroll";
 import { theme } from "./theme";
 import { routes } from "./routes";
 import { AppContainer } from "./style";
 import Navbar from "../../components/Navbar";
 import { changeBarColor, changeInnerColor } from "../../globalActions";
-import SmoothScroll from "smooth-scroll/dist/smooth-scroll";
 
 class App extends React.Component {
   componentDidMount() {
-    let scroll = new SmoothScroll('a[href*="#"]', {
+    const scroll = new SmoothScroll('a[href*="#"]', {
       speed: 700,
       speedAsDuration: true
     });

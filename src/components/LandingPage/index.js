@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { LandingPageContainer, LandingText } from "./style";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Image from "react-bootstrap/Image";
+import { LandingPageContainer, LandingText } from "./style";
 import bg from "../../static/Bird's eye view1.jpg";
 
 class LandingPage extends React.Component {

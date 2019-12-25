@@ -1,14 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Container from "react-bootstrap/Container";
-import { Menu, NavbarContainer } from "./style";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import { MobileView, BrowserView } from "react-device-detect";
 import { Fade } from "react-reveal";
+import Image from "react-bootstrap/Image";
 import logoWhite from "../../static/log va wite.png";
 import logoGreen from "../../static/log va grin.png";
-import Image from "react-bootstrap/Image";
+import {Menu, NavbarContainer, NoStyleA} from "./style";
 
 class Navbar extends React.Component {
   render() {
@@ -27,7 +27,7 @@ class Navbar extends React.Component {
                 />
               </a>
               <div className="align-content-center row ml-auto mr-1">
-                <Menu changeColor={this.props.changeColor}>About</Menu>
+                <Menu changeColor={this.props.changeColor}><NoStyleA href="#about">About</NoStyleA></Menu>
                 <Menu changeColor={this.props.changeColor}>Facilities</Menu>
                 <Menu changeColor={this.props.changeColor}>Nightly Rates</Menu>
                 <Menu changeColor={this.props.changeColor}>Testimonials</Menu>

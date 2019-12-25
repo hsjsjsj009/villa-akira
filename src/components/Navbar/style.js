@@ -14,3 +14,11 @@ export const Menu = styled.h6`
   margin-top: 0.3rem;
   cursor: pointer;
 `;
+
+export const NoStyleA = styled.a`
+    color: inherit;
+    :hover{
+      text-decoration: none;
+      color: inherit;
+    }
+`;

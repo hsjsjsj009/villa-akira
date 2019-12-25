@@ -10,5 +10,10 @@ export const Line = styled.hr`
 `;
 
 export const Title = styled.h4`
-  color: ${props => props.color};
+  color: #707070;
+`;
+
+export const Paragraph = styled.p`
+    color: #707070;
+    font-size: 0.8rem;
 `;
