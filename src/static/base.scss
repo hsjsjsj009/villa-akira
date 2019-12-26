@@ -17,6 +17,13 @@
   }
 }
 
+.part-container{
+  height: calc(100vh);
+  @media screen and (max-width: 1000px){
+      height: calc(100vh + 22rem);
+  }
+}
+
 #landing-image-container {
   &::after {
     content: "";

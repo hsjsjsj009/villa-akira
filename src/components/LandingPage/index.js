@@ -1,19 +1,25 @@
 import React from "react";
-import PropTypes from "prop-types";
+import PropTypes, {func} from "prop-types";
 
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Container from "react-bootstrap/Container";
-import Image from "react-bootstrap/Image";
-import { LandingPageContainer, LandingText } from "./style";
 import bg from "../../static/Bird's eye view1.jpg";
+import { LandingPageContainer, LandingText } from "./style";
+import {connect} from "react-redux";
+import {ready} from "../../globalActions";
+
 
 class LandingPage extends React.Component {
-  render() {
+    componentDidMount() {
+        document.getElementById("landing-image").onload = () => {
+            this.props.readyFunc();
+        }
+    }
+    render() {
     return (
       <LandingPageContainer id="landing-page">
         <div id="landing-image-container">
-          <img src={bg} className="img-fluid" id="landing-image" />
+            <img src={bg} alt="" className="img-fluid" id="landing-image"/>
         </div>
         <Row className="m-0 mr-2" style={{ height: "100%" }}>
           <Col md={8} className="ml-auto align-self-center">
@@ -32,4 +38,10 @@ class LandingPage extends React.Component {
 
 LandingPage.propTypes = {};
 
-export default LandingPage;
+function mapDispatchToProps(dispatch){
+    return {
+        readyFunc: () => dispatch(ready())
+    }
+}
+
+export default connect(null,mapDispatchToProps)(LandingPage);

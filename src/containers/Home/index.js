@@ -3,18 +3,20 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
 import { HomeContainer } from "./style";
-import { ready } from "./actions";
 import LandingPage from "../../components/LandingPage";
 import About from "../../components/About";
 import Host from "../../components/Host";
+import NeighbourHood from "../../components/NeighbourHood";
 
 class Home extends React.Component {
-  render() {
+
+    render() {
     return (
-      <HomeContainer>
-        <LandingPage />
-        <About />
-        <Host />
+      <HomeContainer id="home">
+          <LandingPage />
+          <About />
+          <Host />
+          <NeighbourHood />
       </HomeContainer>
     );
   }
@@ -25,17 +27,17 @@ Home.propTypes = {
 };
 
 function mapStateToProps(state) {
-  return {
-    ready: state.home.ready
-  };
+    let test = {
+        ready: state.global.ready,
+        bg:state.global.image[0]
+    };
+  return test;
 }
 
 function mapDispatchToProps(dispatch) {
-  return {
-    readyFunc: () => {
-      dispatch(ready());
+    return{
+        dispatch
     }
-  };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

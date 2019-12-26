@@ -8,8 +8,13 @@ import { theme } from "./theme";
 import { routes } from "./routes";
 import { AppContainer } from "./style";
 import Navbar from "../../components/Navbar";
-import { changeBarColor, changeInnerColor } from "../../globalActions";
-
+import {changeBarColor, changeInnerColor, ready} from "../../globalActions";
+import Fade from "react-reveal/Fade";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import $ from "jquery";
+import {BeatLoader} from "react-spinners";
+import {css} from '@emotion/core';
 class App extends React.Component {
   componentDidMount() {
     const scroll = new SmoothScroll('a[href*="#"]', {
@@ -26,7 +31,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log();
     const pages = routes.map(route => (
       <Route
         component={route.component}
@@ -36,13 +40,30 @@ class App extends React.Component {
     ));
     return (
       <ThemeProvider theme={theme}>
-        <Navbar
-          changeColor={this.props.changeColor}
-          changeBar={this.props.changeBar}
-        />
-        <AppContainer>
-          <Switch>{pages}</Switch>
-        </AppContainer>
+        <div>
+          <Fade when={!this.props.ready}>
+            <Container style={{height:"100vh",zIndex:1000,position:"fixed",width:"100vw"}}>
+              <Row className="justify-content-center align-content-center" style={{height:"inherit",width:"inherit"}}>
+                <BeatLoader
+                    css={css`display: flex;
+                    justify-content: center`}
+                    size={"3rem"}
+                    color={"#46564A"}
+                    loading={!this.props.ready}/>
+              </Row>
+            </Container>
+          </Fade>
+          <Navbar
+              ready={this.props.ready}
+              changeColor={this.props.changeColor}
+              changeBar={this.props.changeBar}
+          />
+          <Fade when={this.props.ready}>
+            <AppContainer>
+              <Switch>{pages}</Switch>
+            </AppContainer>
+          </Fade>
+        </div>
       </ThemeProvider>
     );
   }
@@ -51,7 +72,8 @@ class App extends React.Component {
 function mapStateToProps(state) {
   return {
     changeColor: state.global.changeInnerColor,
-    changeBar: state.global.changeBarColor
+    changeBar: state.global.changeBarColor,
+    ready:state.global.ready,
   };
 }
 
@@ -62,6 +84,9 @@ function mapDispatchToProps(dispatch) {
     },
     changeInnerColor: bool => {
       dispatch(changeInnerColor(bool));
+    },
+    readyFunc: () => {
+      dispatch(ready());
     }
   };
 }

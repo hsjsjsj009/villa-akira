@@ -1,7 +1,7 @@
 import {
   CHANGE_BAR_COLOR,
   CHANGE_INNER_COLOR,
-  CHANGE_PAGE
+  CHANGE_PAGE, LOAD_IMAGE, PLACE_IMAGE, READY
 } from "./globalConstants";
 
 export const changePage = page => {
@@ -15,3 +15,15 @@ export const changeInnerColor = bool => {
 export const changeBarColor = bool => {
   return { type: CHANGE_BAR_COLOR, payload: bool };
 };
+
+export function ready() {
+  return { type: READY };
+}
+
+export function loadImage() {
+  return {type:LOAD_IMAGE}
+}
+
+export function placeImage(listImage) {
+  return {type:PLACE_IMAGE,payload:listImage};
+}

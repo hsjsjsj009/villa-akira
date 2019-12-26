@@ -10,10 +10,10 @@ import {Line, Paragraph, Title} from "../../containers/Home/style";
 class About extends React.Component {
   render() {
     return (
-      <AboutContainer id="about">
+      <AboutContainer id="about" className="part-container">
         <Container style={{ height: "inherit" }} fluid>
-          <Row style={{ height: "100%" }} className="justify-content-center">
-            <Col md={5} className="align-self-center">
+          <Row style={{ height: "inherit" }} className="justify-content-center">
+            <Col md={5} className="align-self-end">
               <Title className="mb-3">
                 ABOUT VILLA AKIRA
               </Title>

@@ -6,7 +6,12 @@ export const NavbarContainer = styled.div`
   width: 100%;
   z-index: 100;
   background: ${props => (props.changeBar ? "#46564A" : "none")};
+  display: ${props => props.ready ? "block" : "none"};
 `;
+
+export const NavBar = styled.div`
+`;
+
 export const Menu = styled.h6`
   color: ${props => (props.changeColor ? "#46564A" : "white")};
   margin: 1.2rem;
