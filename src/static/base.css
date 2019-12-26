@@ -24,20 +24,15 @@
 }
 
 .part-container {
-  height: calc(100vh);
-}
-@media screen and (max-width: 1000px) {
-  .part-container {
-    height: calc(100vh + 22rem);
-  }
+  height: 100%;
 }
 
 #landing-image-container::after {
   content: "";
   position: absolute;
-  top: 0;
   right: 0;
   left: 0;
+  bottom: 0;
   height: 100vh;
   background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.0895522) 70%, #ffffff 100%);
 }

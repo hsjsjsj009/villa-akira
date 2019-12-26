@@ -6,11 +6,12 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import {Arrow, Circle, Line, Paragraph, SlideHover, Title} from "../../containers/Home/style";
+import SlideShow from "../SlideShow";
 
 class NeighbourHood extends React.Component {
   render() {
     return (
-      <NeighbourHoodContainer>
+      <NeighbourHoodContainer className="my-5">
         <Container fluid style={{height:"inherit"}}>
           <Row className="justify-content-center" style={{height:"inherit"}}>
             <Col md={5} className="align-self-center">
@@ -36,7 +37,7 @@ class NeighbourHood extends React.Component {
               </Row>
             </Col>
             <Col md={5}>
-
+              <SlideShow/>
             </Col>
           </Row>
         </Container>

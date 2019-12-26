@@ -10,7 +10,7 @@ import {Line, Paragraph, Title} from "../../containers/Home/style";
 class Host extends React.Component {
   render() {
     return (
-      <HostContainer>
+      <HostContainer className="my-5">
           <Container fluid style={{height:"inherit"}}>
             <Row style={{height:"inherit"}} className="justify-content-center align-content-center">
               <Col md={5} className="align-self-center">

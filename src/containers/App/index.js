@@ -19,7 +19,8 @@ class App extends React.Component {
   componentDidMount() {
     const scroll = new SmoothScroll('a[href*="#"]', {
       speed: 700,
-      speedAsDuration: true
+      speedAsDuration: true,
+      offset:150
     });
     window.onscroll = () => {
       if (document.documentElement.scrollTop > 50) {
@@ -42,7 +43,7 @@ class App extends React.Component {
       <ThemeProvider theme={theme}>
         <div>
           <Fade when={!this.props.ready}>
-            <Container style={{height:"100vh",zIndex:1000,position:"fixed",width:"100vw"}}>
+            <Container style={{height:"100vh",zIndex:(this.props.ready ? -1000:1000),position:"fixed",width:"100vw"}}>
               <Row className="justify-content-center align-content-center" style={{height:"inherit",width:"inherit"}}>
                 <BeatLoader
                     css={css`display: flex;
