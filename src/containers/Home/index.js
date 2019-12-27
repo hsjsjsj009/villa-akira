@@ -7,16 +7,17 @@ import LandingPage from "../../components/LandingPage";
 import About from "../../components/About";
 import Host from "../../components/Host";
 import NeighbourHood from "../../components/NeighbourHood";
+import Facilities from "../../components/Facilities";
 
 class Home extends React.Component {
-
-    render() {
+  render() {
     return (
       <HomeContainer id="home">
-          <LandingPage />
-          <About />
-          <Host />
-          <NeighbourHood />
+        <LandingPage />
+        <About />
+        <Host />
+        <NeighbourHood />
+        <Facilities />
       </HomeContainer>
     );
   }
@@ -27,17 +28,16 @@ Home.propTypes = {
 };
 
 function mapStateToProps(state) {
-    let test = {
-        ready: state.global.ready,
-        bg:state.global.image[0]
-    };
-  return test;
+  return {
+    ready: state.global.ready,
+    bg: state.global.image[0]
+  };
 }
 
 function mapDispatchToProps(dispatch) {
-    return{
-        dispatch
-    }
+  return {
+    dispatch
+  };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
