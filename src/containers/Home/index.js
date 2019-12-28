@@ -8,6 +8,9 @@ import About from "../../components/About";
 import Host from "../../components/Host";
 import NeighbourHood from "../../components/NeighbourHood";
 import Facilities from "../../components/Facilities";
+import NightRates from "../../components/NightRates";
+import Testimoni from "../../components/Testimoni";
+import Footer from "../../components/Footer";
 
 class Home extends React.Component {
   render() {
@@ -18,6 +21,9 @@ class Home extends React.Component {
         <Host />
         <NeighbourHood />
         <Facilities />
+        <NightRates />
+        <Testimoni/>
+        <Footer/>
       </HomeContainer>
     );
   }

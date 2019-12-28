@@ -20,17 +20,21 @@ export const Paragraph = styled.p`
     font-size: 0.8rem;
 `;
 
-export const Circle = styled.div`
+export const Circle = styled.button`
     background-color: white;
     width:${props => props.size};
     height: ${props => props.size};
     padding: 0;
     border-radius: 50%;
-    box-shadow: 0px 0px 12px black;
+    border: none;
+    box-shadow: 0px 0px 18px lightgray;
     transition: 0.5s;
     &:hover{
-      box-shadow: 0px 0px 20px black;
+      box-shadow: 0px 0px 30px lightgray;
       transform: scale(1.1);
+    }
+    &:focus{
+      outline: none;
     }
 `;
 

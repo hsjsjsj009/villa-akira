@@ -9,7 +9,7 @@ class ImageSlide extends React.Component {
     return (
       <ImageSlideContainer>
         {this.props.right && (
-          <Fade right opposite when={!this.props.change}>
+          <Fade left opposite when={!this.props.change}>
             <div style={{ height: "inherit", width: "inherit" }}>
               <div
                 style={{
@@ -33,7 +33,7 @@ class ImageSlide extends React.Component {
           </Fade>
         )}
         {this.props.left && (
-          <Fade left opposite when={!this.props.change}>
+          <Fade right opposite when={!this.props.change}>
             <div style={{ height: "inherit", width: "inherit" }}>
               <div
                 style={{

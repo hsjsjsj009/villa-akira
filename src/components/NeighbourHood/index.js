@@ -122,7 +122,7 @@ class NeighbourHood extends React.Component {
               <Paragraph>
                 In Puncak area, we can find hundreds of accommodations from low-income homestays, guest houses, apartments to motels and five-star hotels, with different price ranges and socio-economic guests from all parts of Indonesia.  Puncak is a melting pot of diversity where you can find a Javanese and Padang restaurant across from a Turkish kebab and Italian pizza on the same street.
               </Paragraph>
-              <Row className="justify-content-center mt-5">
+              <Row className="justify-content-center mt-2">
                 <SlideHover left className="mx-5" onClick={this.prevImage}>
                   <Circle
                     size="2.5rem"

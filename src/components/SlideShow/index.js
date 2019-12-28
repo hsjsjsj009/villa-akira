@@ -13,33 +13,33 @@ class SlideShow extends React.Component {
     return (
       <SlideShowContainer>
         <Row>
-          {this.props.nextImage && (
-            <div
-              style={{
-                height: this.props.sideHeight,
-                overflow: "hidden",
-                width: this.props.sideWidth
-              }}
-              className="align-self-center mx-auto"
-            >
-              {!this.props.prev && (
-                <ImageSlide
-                  change={this.props.change}
-                  src={this.props.nextImage}
-                  style={this.props.nextStyle}
-                  left
-                />
-              )}
-              {this.props.prev && (
-                <ImageSlide
-                  change={this.props.change}
-                  src={this.props.nextImage}
-                  style={this.props.nextStyle}
-                  right
-                />
-              )}
-            </div>
-          )}
+            {this.props.prevImage && (
+                <div
+                    style={{
+                        height: this.props.sideHeight,
+                        width: this.props.sideWidth,
+                        overflow: "hidden"
+                    }}
+                    className="align-self-center mx-auto"
+                >
+                    {!this.props.prev && (
+                        <ImageSlide
+                            change={this.props.change}
+                            src={this.props.prevImage}
+                            style={this.props.prevStyle}
+                            left
+                        />
+                    )}
+                    {this.props.prev && (
+                        <ImageSlide
+                            change={this.props.change}
+                            src={this.props.prevImage}
+                            style={this.props.prevStyle}
+                            right
+                        />
+                    )}
+                </div>
+            )}
           <div
             style={{
               height: this.props.mainHeight,
@@ -67,33 +67,33 @@ class SlideShow extends React.Component {
               />
             )}
           </div>
-          {this.props.prevImage && (
-            <div
-              style={{
-                height: this.props.sideHeight,
-                width: this.props.sideWidth,
-                overflow: "hidden"
-              }}
-              className="align-self-center mx-auto"
-            >
-              {!this.props.prev && (
-                <ImageSlide
-                  change={this.props.change}
-                  src={this.props.prevImage}
-                  style={this.props.prevStyle}
-                  left
-                />
-              )}
-              {this.props.prev && (
-                <ImageSlide
-                  change={this.props.change}
-                  src={this.props.prevImage}
-                  style={this.props.prevStyle}
-                  right
-                />
-              )}
-            </div>
-          )}
+            {this.props.nextImage && (
+                <div
+                    style={{
+                        height: this.props.sideHeight,
+                        overflow: "hidden",
+                        width: this.props.sideWidth
+                    }}
+                    className="align-self-center mx-auto"
+                >
+                    {!this.props.prev && (
+                        <ImageSlide
+                            change={this.props.change}
+                            src={this.props.nextImage}
+                            style={this.props.nextStyle}
+                            left
+                        />
+                    )}
+                    {this.props.prev && (
+                        <ImageSlide
+                            change={this.props.change}
+                            src={this.props.nextImage}
+                            style={this.props.nextStyle}
+                            right
+                        />
+                    )}
+                </div>
+            )}
         </Row>
       </SlideShowContainer>
     );

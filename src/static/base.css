@@ -11,8 +11,8 @@
 @media screen and (min-width: 1024px) {
   #landing-image {
     bottom: 0;
-    height: auto;
-    width: 100vw;
+    height: 100vh;
+    width: auto;
   }
 }
 @media screen and (min-width: 1440px) {
