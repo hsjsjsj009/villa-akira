@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { HostContainer } from './style';
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { HostContainer } from './style';
 import {Line, Paragraph, Title} from "../../containers/Home/style";
 
 class Host extends React.Component {
@@ -18,7 +18,7 @@ class Host extends React.Component {
               </Col>
               <Col md={5} className="align-self-center">
                 <Title className="mb-3">THE HOST</Title>
-                <Line color={"#707070"} size={"7rem"}/>
+                <Line color="#707070" size="7rem"/>
                 <br/>
                 <Paragraph>
                     My name is Maya a mother with three children and one granddaughter.

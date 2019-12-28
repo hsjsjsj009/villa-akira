@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { NeighbourHoodContainer } from "./style";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { NeighbourHoodContainer } from "./style";
 import {
   Arrow,
   Circle,
@@ -34,62 +34,69 @@ class NeighbourHood extends React.Component {
       prev: false
     };
   }
+
   prevImage = () => {
     this.setState({
-      change: true,
       prev: true,
+    });
+    setTimeout(() => this.setState({
+      change: true,
       nowIndex:
-        (this.state.nowIndex + this.state.images.length - 1) %
-        this.state.images.length,
+          (this.state.nowIndex + this.state.images.length - 1) %
+          this.state.images.length,
       nowImage:
-        Images[
-          (this.state.nowIndex + this.state.images.length - 1) %
-            this.state.images.length
-        ].src,
+      Images[
+      (this.state.nowIndex + this.state.images.length - 1) %
+      this.state.images.length
+          ].src,
       nowStyle:
-        Images[
-          (this.state.nowIndex + this.state.images.length - 1) %
-            this.state.images.length
-        ].styleNow,
+      Images[
+      (this.state.nowIndex + this.state.images.length - 1) %
+      this.state.images.length
+          ].styleNow,
       nextIndex: this.state.nowIndex,
       nextImage: Images[this.state.nowIndex].src,
       nextStyle: Images[this.state.nowIndex].style,
       prevIndex:
-        (this.state.nowIndex + this.state.images.length - 2) %
-        this.state.images.length,
+          (this.state.nowIndex + this.state.images.length - 2) %
+          this.state.images.length,
       prevImage:
-        Images[
-          (this.state.nowIndex + this.state.images.length - 2) %
-            this.state.images.length
-        ].src,
+      Images[
+      (this.state.nowIndex + this.state.images.length - 2) %
+      this.state.images.length
+          ].src,
       prevStyle:
-        Images[
-          (this.state.nowIndex + this.state.images.length - 2) %
-            this.state.images.length
-        ].style
-    });
-    setTimeout(() => this.setState({ change: false }), 700);
+      Images[
+      (this.state.nowIndex + this.state.images.length - 2) %
+      this.state.images.length
+          ].style
+    }),2);
+    setTimeout(() => this.setState({ change: false }), 600);
   };
+
   nextImage = () => {
     this.setState({
       prev: false,
+    });
+    setTimeout(() => this.setState({
       change: true,
       nowIndex: (this.state.nowIndex + 1) % this.state.images.length,
       nowImage:
-        Images[(this.state.nowIndex + 1) % this.state.images.length].src,
+      Images[(this.state.nowIndex + 1) % this.state.images.length].src,
       nowStyle:
-        Images[(this.state.nowIndex + 1) % this.state.images.length].styleNow,
+      Images[(this.state.nowIndex + 1) % this.state.images.length].styleNow,
       nextIndex: (this.state.nowIndex + 2) % this.state.images.length,
       nextImage:
-        Images[(this.state.nowIndex + 2) % this.state.images.length].src,
+      Images[(this.state.nowIndex + 2) % this.state.images.length].src,
       nextStyle:
-        Images[(this.state.nowIndex + 2) % this.state.images.length].style,
+      Images[(this.state.nowIndex + 2) % this.state.images.length].style,
       prevIndex: this.state.nowIndex,
       prevImage: Images[this.state.nowIndex].src,
       prevStyle: Images[this.state.nowIndex].style
-    });
-    setTimeout(() => this.setState({ change: false }), 700);
+    }),2);
+    setTimeout(() => this.setState({ change: false }), 600);
   };
+
   render() {
     return (
       <NeighbourHoodContainer className="my-5">
@@ -97,7 +104,7 @@ class NeighbourHood extends React.Component {
           <Row className="justify-content-center" style={{ height: "inherit" }}>
             <Col md={5} className="align-self-center">
               <Title className="mb-3">THE NEIGHBORHOOD</Title>
-              <Line color={"#707070"} size={"16.5rem"} />
+              <Line color="#707070" size="16.5rem" />
               <br />
               <Paragraph>
                 Megamendung District where Villa Akira is located, is a hilly
@@ -106,10 +113,19 @@ class NeighbourHood extends React.Component {
                 strong, and "mendung" means cloudy which explains the area
                 covered with cloud and located on the mountains.
               </Paragraph>
+              <Paragraph>
+                Megamendung is a part of Puncak, a mountain pass in West Java which is a common weekend destination for residents of Jakarta including for those who are longing for clean are and natural scenery.  The pass connects the city of Bogor and Bandung and is spread within the regencies of Bogor, Cianjur and Sukabumi.
+              </Paragraph>
+              <Paragraph>
+                In Puncak area, we can find hundreds of accommodations from low-income homestays, guest houses, apartments to motels and five-star hotels, with different price ranges and socio-economic guests from all parts of Indonesia.  Puncak is a melting pot of diversity where you can find a Javanese and Padang restaurant across from a Turkish kebab and Italian pizza on the same street.
+              </Paragraph>
+              <Paragraph>
+                In Puncak area, we can find hundreds of accommodations from low-income homestays, guest houses, apartments to motels and five-star hotels, with different price ranges and socio-economic guests from all parts of Indonesia.  Puncak is a melting pot of diversity where you can find a Javanese and Padang restaurant across from a Turkish kebab and Italian pizza on the same street.
+              </Paragraph>
               <Row className="justify-content-center mt-5">
                 <SlideHover left className="mx-5" onClick={this.prevImage}>
                   <Circle
-                    size={"2.5rem"}
+                    size="2.5rem"
                     className="row align-content-center"
                     style={{ position: "relative", cursor: "pointer" }}
                   >
@@ -117,7 +133,7 @@ class NeighbourHood extends React.Component {
                       left
                       width={0.2}
                       size={0.5}
-                      color={"#707070"}
+                      color="#707070"
                       style={{
                         position: "absolute",
                         left: "0.8rem",
@@ -128,14 +144,14 @@ class NeighbourHood extends React.Component {
                 </SlideHover>
                 <SlideHover className="mx-5" onClick={this.nextImage}>
                   <Circle
-                    size={"2.5rem"}
+                    size="2.5rem"
                     className="row align-content-center"
                     style={{ position: "relative", cursor: "pointer" }}
                   >
                     <Arrow
                       width={0.2}
                       size={0.5}
-                      color={"#707070"}
+                      color="#707070"
                       style={{
                         position: "absolute",
                         left: "0.5rem",
@@ -146,13 +162,13 @@ class NeighbourHood extends React.Component {
                 </SlideHover>
               </Row>
             </Col>
-            <Col md={5}>
+            <Col md={5} className="align-self-center">
               <SlideShow
                 {...this.state}
-                sideHeight={"10rem"}
-                sideWidth={"6rem"}
-                mainHeight={"15rem"}
-                mainWidth={"9rem"}
+                sideHeight="10rem"
+                sideWidth="6rem"
+                mainHeight="15rem"
+                mainWidth="9rem"
               />
             </Col>
           </Row>

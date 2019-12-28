@@ -4,17 +4,18 @@ import { connect } from "react-redux";
 import { ThemeProvider } from "styled-components";
 
 import SmoothScroll from "smooth-scroll/dist/smooth-scroll";
-import { theme } from "./theme";
-import { routes } from "./routes";
-import { AppContainer } from "./style";
-import Navbar from "../../components/Navbar";
-import {changeBarColor, changeInnerColor, ready} from "../../globalActions";
 import Fade from "react-reveal/Fade";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import $ from "jquery";
 import {BeatLoader} from "react-spinners";
 import {css} from '@emotion/core';
+import {changeBarColor, changeInnerColor, ready} from "../../globalActions";
+import Navbar from "../../components/Navbar";
+import { AppContainer } from "./style";
+import { routes } from "./routes";
+import { theme } from "./theme";
+
 class App extends React.Component {
   componentDidMount() {
     const scroll = new SmoothScroll('a[href*="#"]', {
@@ -48,8 +49,8 @@ class App extends React.Component {
                 <BeatLoader
                     css={css`display: flex;
                     justify-content: center`}
-                    size={"3rem"}
-                    color={"#46564A"}
+                    size="3rem"
+                    color="#46564A"
                     loading={!this.props.ready}/>
               </Row>
             </Container>

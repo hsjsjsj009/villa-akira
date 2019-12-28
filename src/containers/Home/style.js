@@ -26,7 +26,12 @@ export const Circle = styled.div`
     height: ${props => props.size};
     padding: 0;
     border-radius: 50%;
-    box-shadow: 0px 0px 15px black;
+    box-shadow: 0px 0px 12px black;
+    transition: 0.5s;
+    &:hover{
+      box-shadow: 0px 0px 20px black;
+      transform: scale(1.1);
+    }
 `;
 
 export const Arrow = styled.i`

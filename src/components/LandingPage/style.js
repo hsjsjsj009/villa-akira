@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const LandingPageContainer = styled.div`
   position: relative;
   overflow: hidden;
-  height: 100vh;
+  height: ${props => props.height}px;
 `;
 
 export const LandingText = styled.h1`

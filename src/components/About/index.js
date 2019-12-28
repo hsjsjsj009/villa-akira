@@ -4,10 +4,10 @@ import PropTypes from "prop-types";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Lightbox from "react-image-lightbox";
 import {AboutContainer, ImageBorder} from "./style";
 import {Line, Paragraph, Title} from "../../containers/Home/style";
 import {Images} from "./photos";
-import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css";
 
 class About extends React.Component {

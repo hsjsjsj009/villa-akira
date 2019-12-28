@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { SlideShowContainer } from "./style";
-import { Images } from "../NeighbourHood/images";
 import { Fade } from "react-reveal";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { Images } from "../NeighbourHood/images";
+import { SlideShowContainer } from "./style";
 import ImageSlide from "../ImageSlide";
 
 class SlideShow extends React.Component {
@@ -44,9 +44,11 @@ class SlideShow extends React.Component {
             style={{
               height: this.props.mainHeight,
               overflow: "hidden",
-              width: this.props.mainWidth
+              width: this.props.mainWidth,
+                cursor:(this.props.zoom ? "pointer" : "")
             }}
             className="align-self-center mx-auto"
+            onClick={this.props.zoomFunc ? this.props.zoomFunc : null}
           >
             {!this.props.prev && (
               <ImageSlide

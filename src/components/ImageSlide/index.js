@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { ImageSlideContainer } from "./style";
 import { Fade } from "react-reveal";
+import { ImageSlideContainer } from "./style";
 
 class ImageSlide extends React.Component {
   render() {

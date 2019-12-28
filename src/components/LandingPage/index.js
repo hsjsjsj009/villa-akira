@@ -3,9 +3,9 @@ import PropTypes, {func} from "prop-types";
 
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import {connect} from "react-redux";
 import bg from "../../static/Bird's eye view1.jpg";
 import { LandingPageContainer, LandingText } from "./style";
-import {connect} from "react-redux";
 import {ready} from "../../globalActions";
 
 
@@ -15,9 +15,10 @@ class LandingPage extends React.Component {
             this.props.readyFunc();
         }
     }
+
     render() {
     return (
-      <LandingPageContainer id="landing-page">
+      <LandingPageContainer height={window.innerHeight} id="landing-page">
         <div id="landing-image-container">
             <img src={bg} alt="" className="img-fluid" id="landing-image"/>
         </div>
