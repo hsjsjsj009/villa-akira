@@ -13,10 +13,10 @@ class Host extends React.Component {
       <HostContainer className="my-5">
           <Container fluid style={{height:"inherit"}}>
             <Row style={{height:"inherit"}} className="justify-content-center align-content-center">
-              <Col md={5} className="align-self-center">
-
+              <Col md={3} className={this.props.max500 ? "align-self-center mx-auto mb-3":"align-self-center mx-4"}>
+                <img src={require("../../static/host.jpg")} style={{borderRadius:"50%"}} className="img-fluid" alt=""/>
               </Col>
-              <Col md={5} className="align-self-center">
+              <Col md={6} className={this.props.max500 ? "align-self-center mx-auto my-3":"align-self-center mx-4"}>
                 <Title className="mb-3">THE HOST</Title>
                 <Line color="#707070" size="7rem"/>
                 <br/>

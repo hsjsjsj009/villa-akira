@@ -26,7 +26,7 @@ class Home extends React.Component {
         <LandingPage />
           {this.props.ready && <React.Fragment>
               <About max500={this.props.max500Query} />
-              <Host />
+              <Host max500={this.props.max500Query} />
               <NeighbourHood max500={this.props.max500Query} />
               <Facilities max500={this.props.max500Query} />
               <NightRates max500={this.props.max500Query} />
