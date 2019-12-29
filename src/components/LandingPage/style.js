@@ -11,4 +11,7 @@ export const LandingText = styled.h1`
   z-index: 1;
   color: white;
   text-shadow: 0px 0px 3rem black;
+  @media screen and (max-width: 550px){
+    font-size: 2.7rem;
+  }
 `;

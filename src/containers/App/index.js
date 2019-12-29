@@ -21,7 +21,7 @@ class App extends React.Component {
     const scroll = new SmoothScroll('a[href*="#"]', {
       speed: 700,
       speedAsDuration: true,
-      offset:150
+      offset:120
     });
     window.onscroll = () => {
       if (document.documentElement.scrollTop > 50) {
@@ -59,6 +59,7 @@ class App extends React.Component {
               ready={this.props.ready}
               changeColor={this.props.changeColor}
               changeBar={this.props.changeBar}
+              max500={this.props.max500Query}
           />
           <Fade when={this.props.ready}>
             <AppContainer>
@@ -76,6 +77,7 @@ function mapStateToProps(state) {
     changeColor: state.global.changeInnerColor,
     changeBar: state.global.changeBarColor,
     ready:state.global.ready,
+    max500Query:state.home.max500
   };
 }
 

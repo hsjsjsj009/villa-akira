@@ -12,6 +12,8 @@ export const ImageBorder = styled.div`
   & > img{
   cursor: pointer;
   transition: 0.5s;
+  object-fit: cover;
+  width: inherit;
     &:hover{
       transform: scale(1.2);
     } 

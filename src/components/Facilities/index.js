@@ -62,8 +62,8 @@ class Facilities extends React.PureComponent {
     return (
       <FacilitiesContainer className="part-container my-5" id="facilities">
         <Container fluid>
-          <Row className="justify-content-center">
-            <Col md={5} className="align-self-center">
+          <Row className="justify-content-center" style={{flexWrap:"wrap-reverse"}}>
+            <Col md={5} className={this.props.max500 ? "align-self-center my-4":"align-self-center"}>
               <SlideShow {...this.state} mainHeight={"15rem"} mainWidth={"15rem"} zoom zoomFunc={() => {this.setState({viewer:true})}}/>
               {this.state.viewer && <Lightbox mainSrc={ImagesView[this.state.indexViewer]}
                 nextSrc={ImagesView[ (this.state.indexViewer + 1) % ImagesView.length]}
@@ -82,7 +82,7 @@ class Facilities extends React.PureComponent {
                   viewer:false
                 })}/>}
             </Col>
-            <Col md={5} className="align-self-center">
+            <Col md={5} className={this.props.max500 ? "align-self-center my-4":"align-self-center"}>
               <Title className="mb-3">FACILITIES</Title>
               <Line color="#707070" size="9rem"/>
               <br/>

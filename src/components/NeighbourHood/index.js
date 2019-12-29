@@ -15,6 +15,7 @@ import {
 } from "../../containers/Home/style";
 import SlideShow from "../SlideShow";
 import { Images } from "./images";
+import {isMobile} from "react-device-detect";
 
 class NeighbourHood extends React.Component {
   constructor(props) {
@@ -102,7 +103,7 @@ class NeighbourHood extends React.Component {
       <NeighbourHoodContainer className="my-5">
         <Container fluid style={{ height: "inherit" }}>
           <Row className="justify-content-center" style={{ height: "inherit" }}>
-            <Col md={5} className="align-self-center">
+            <Col md={5} className={(this.props.max500 ? "my-4 " : "") + "align-self-center"}>
               <Title className="mb-3">THE NEIGHBORHOOD</Title>
               <Line color="#707070" size="16.5rem" />
               <br />
@@ -162,7 +163,7 @@ class NeighbourHood extends React.Component {
                 </SlideHover>
               </Row>
             </Col>
-            <Col md={5} className="align-self-center">
+            <Col md={5} className={this.props.max500 ? "my-4 align-self-center" : "align-self-center"}>
               <SlideShow
                 {...this.state}
                 sideHeight="10rem"

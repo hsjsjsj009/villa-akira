@@ -10,17 +10,12 @@ import {ready} from "../../globalActions";
 
 
 class LandingPage extends React.Component {
-    componentDidMount() {
-        document.getElementById("landing-image").onload = () => {
-            this.props.readyFunc();
-        }
-    }
-
     render() {
     return (
       <LandingPageContainer height={window.innerHeight} id="landing-page">
         <div id="landing-image-container">
-            <img src={bg} alt="" className="img-fluid" id="landing-image"/>
+            <img src={bg} alt="" className="img-fluid" onLoad={() => {
+                this.props.readyFunc()}} id="landing-image"/>
         </div>
         <Row className="m-0 mr-2" style={{ height: "100%" }}>
           <Col md={8} className="ml-auto align-self-center">

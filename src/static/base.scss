@@ -1,19 +1,21 @@
 #landing-image {
   position: absolute;
   z-index: -2;
-  @media screen and (min-width: 800px) {
+  object-fit: cover;
+  @media screen and (max-width: 550px) {
     height: 100vh;
-    width: auto;
+    object-position: 25% 0%;
+  }
+  @media screen and (min-width: 768px) {
+    height: 100vh;
   }
   @media screen and (min-width: 1024px) {
-    bottom: 0;
-    height: 100vh;
-    width: auto;
+    width: 100vw;
+    object-position: 0% 100%;
   }
   @media screen and (min-width: 1440px) {
-    height: auto;
     width: 100vw;
-    bottom: 0;
+    object-position: 0% 100%;
   }
 }
 
@@ -46,6 +48,9 @@
     &:hover {
       text-decoration: none;
       color: #46564a;
+    }
+    @media screen and (max-width: 550px){
+        font-size: 1.2rem;
     }
   }
 }

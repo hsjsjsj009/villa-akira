@@ -1,25 +1,29 @@
 #landing-image {
   position: absolute;
   z-index: -2;
+  object-fit: cover;
 }
-@media screen and (min-width: 800px) {
+@media screen and (max-width: 550px) {
   #landing-image {
     height: 100vh;
-    width: auto;
+    object-position: 25% 0%;
+  }
+}
+@media screen and (min-width: 768px) {
+  #landing-image {
+    height: 100vh;
   }
 }
 @media screen and (min-width: 1024px) {
   #landing-image {
-    bottom: 0;
-    height: 100vh;
-    width: auto;
+    width: 100vw;
+    object-position: 0% 100%;
   }
 }
 @media screen and (min-width: 1440px) {
   #landing-image {
-    height: auto;
     width: 100vw;
-    bottom: 0;
+    object-position: 0% 100%;
   }
 }
 
@@ -46,6 +50,11 @@
 #book-now > a:hover {
   text-decoration: none;
   color: #46564a;
+}
+@media screen and (max-width: 550px) {
+  #book-now > a {
+    font-size: 1.2rem;
+  }
 }
 
 /*# sourceMappingURL=base.css.map */

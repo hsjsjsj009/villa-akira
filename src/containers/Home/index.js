@@ -11,18 +11,27 @@ import Facilities from "../../components/Facilities";
 import NightRates from "../../components/NightRates";
 import Testimoni from "../../components/Testimoni";
 import Footer from "../../components/Footer";
+import {max500} from "./actions";
 
 class Home extends React.Component {
-  render() {
+    componentDidMount() {
+      const max500 = window.matchMedia("(max-width:550px)");
+      this.props.max500Func(max500);
+      max500.addListener(this.props.max500Func);
+    };
+
+    render() {
     return (
       <HomeContainer id="home">
         <LandingPage />
-        <About />
-        <Host />
-        <NeighbourHood />
-        <Facilities />
-        <NightRates />
-        <Testimoni/>
+          {this.props.ready && <React.Fragment>
+              <About max500={this.props.max500Query} />
+              <Host />
+              <NeighbourHood max500={this.props.max500Query} />
+              <Facilities max500={this.props.max500Query} />
+              <NightRates max500={this.props.max500Query} />
+              <Testimoni/>
+          </React.Fragment> }
         <Footer/>
       </HomeContainer>
     );
@@ -36,13 +45,14 @@ Home.propTypes = {
 function mapStateToProps(state) {
   return {
     ready: state.global.ready,
-    bg: state.global.image[0]
+    bg: state.global.image[0],
+      max500Query:state.home.max500
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    dispatch
+    max500Func:(query) => dispatch(max500(query))
   };
 }
 

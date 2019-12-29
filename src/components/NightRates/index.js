@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import {CardRates, NightRatesContainer} from './style';
 import {Line, Paragraph, Title} from "../../containers/Home/style";
 import {Container, Row} from "react-bootstrap";
+import {isMobile} from "react-device-detect";
 
 class NightRates extends React.Component {
   render() {
@@ -17,11 +18,11 @@ class NightRates extends React.Component {
               </Row>
             </div>
           <Row className="my-5 justify-content-center">
-            <CardRates className="mx-3">
+            <CardRates className={this.props.max500 ? "mx-auto my-3" : "mx-3"}>
               <h4 style={{color:"#707070"}} className="m-0 text-center">IDR 3,500,000</h4>
               <Paragraph className="text-center m-0 p-2">(Weekdays, Sunday to Thursday)</Paragraph>
             </CardRates>
-            <CardRates className="mx-3">
+            <CardRates className={this.props.max500 ? "mx-auto my-3" : "mx-3"}>
               <h4 style={{color:"#707070"}} className="m-0 text-center">IDR 4,500,000</h4>
               <Paragraph className="text-center m-0 p-2">(Weekends, Friday and Saturday)</Paragraph>
             </CardRates>
