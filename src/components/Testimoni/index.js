@@ -4,10 +4,14 @@ import PropTypes from 'prop-types';
 import {SlideContainer, TestimoniCard, TestimoniContainer} from './style';
 import {Line, Paragraph, Title} from "../../containers/Home/style";
 import {Container, Row} from "react-bootstrap";
+import Slider from "react-slick";
 import {TestimoniData} from "./testimoni";
 
 class Testimoni extends React.PureComponent {
   render() {
+    const sliderSettings = {
+
+    };
     return (
       <TestimoniContainer className="my-5" id="testimoni">
         <Container fluid>
@@ -17,15 +21,9 @@ class Testimoni extends React.PureComponent {
               <Line color="#707070" size="11rem"/>
             </Row>
           </div>
-            <SlideContainer className="my-3">
-              {TestimoniData.map((obj) => {
-                return <TestimoniCard key={Math.random()}>
-                  <h5>{obj.name}</h5>
-                  <Paragraph>{obj.message}</Paragraph>
-                  <h6>({obj.date})</h6>
-                </TestimoniCard>
-              })}
-            </SlideContainer>
+            <Slider>
+
+            </Slider>
         </Container>
       </TestimoniContainer>
     );
