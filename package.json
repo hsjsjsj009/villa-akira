@@ -32,6 +32,7 @@
     "redux-thunk": "^2.3.0",
     "scrollwatch": "^2.0.1",
     "serve": "^11.2.0",
+    "slick-carousel": "^1.8.1",
     "smooth-scroll": "^16.1.0",
     "styled-components": "^4.1.3"
   },

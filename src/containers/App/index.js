@@ -8,9 +8,14 @@ import Fade from "react-reveal/Fade";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import $ from "jquery";
-import {BeatLoader} from "react-spinners";
-import {css} from '@emotion/core';
-import {changeBarColor, changeInnerColor, ready} from "../../globalActions";
+import { BeatLoader } from "react-spinners";
+import { css } from "@emotion/core";
+import {
+  changeBarColor,
+  changeInnerColor,
+  indonesiaLanguage,
+  ready
+} from "../../globalActions";
 import Navbar from "../../components/Navbar";
 import { AppContainer } from "./style";
 import { routes } from "./routes";
@@ -21,7 +26,7 @@ class App extends React.Component {
     const scroll = new SmoothScroll('a[href*="#"]', {
       speed: 700,
       speedAsDuration: true,
-      offset:120
+      offset: 120
     });
     window.onscroll = () => {
       if (document.documentElement.scrollTop > 50) {
@@ -44,22 +49,38 @@ class App extends React.Component {
       <ThemeProvider theme={theme}>
         <div>
           <Fade when={!this.props.ready}>
-            <Container style={{height:"100vh",zIndex:(this.props.ready ? -1000:1000),position:"fixed",width:"100vw"}}>
-              <Row className="justify-content-center align-content-center" style={{height:"inherit",width:"inherit"}}>
+            <Container
+              style={{
+                height: "100vh",
+                zIndex: this.props.ready ? -1000 : 1000,
+                position: "fixed",
+                width: "100vw"
+              }}
+            >
+              <Row
+                className="justify-content-center align-content-center"
+                style={{ height: "inherit", width: "inherit" }}
+              >
                 <BeatLoader
-                    css={css`display: flex;
-                    justify-content: center`}
-                    size="3rem"
-                    color="#46564A"
-                    loading={!this.props.ready}/>
+                  css={css`
+                    display: flex;
+                    justify-content: center;
+                  `}
+                  size="3rem"
+                  color="#46564A"
+                  loading={!this.props.ready}
+                />
               </Row>
             </Container>
           </Fade>
           <Navbar
-              ready={this.props.ready}
-              changeColor={this.props.changeColor}
-              changeBar={this.props.changeBar}
-              max500={this.props.max500Query}
+            ready={this.props.ready}
+            changeColor={this.props.changeColor}
+            changeBar={this.props.changeBar}
+            max500={this.props.max500Query}
+            max1024={this.props.max1024Query}
+            changeLanguage={this.props.changeLanguage}
+            indonesia={this.props.indonesia}
           />
           <Fade when={this.props.ready}>
             <AppContainer>
@@ -76,8 +97,10 @@ function mapStateToProps(state) {
   return {
     changeColor: state.global.changeInnerColor,
     changeBar: state.global.changeBarColor,
-    ready:state.global.ready,
-    max500Query:state.home.max500
+    ready: state.global.ready,
+    max500Query: state.home.max500,
+    max1024Query: state.home.max1024,
+    indonesia: state.global.indonesia
   };
 }
 
@@ -91,6 +114,9 @@ function mapDispatchToProps(dispatch) {
     },
     readyFunc: () => {
       dispatch(ready());
+    },
+    changeLanguage: () => {
+      dispatch(indonesiaLanguage());
     }
   };
 }

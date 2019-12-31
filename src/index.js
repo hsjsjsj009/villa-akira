@@ -1,5 +1,7 @@
-import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import React from "react";
 import { render } from "react-dom";
 import { Provider } from "react-redux";
@@ -14,7 +16,6 @@ import App from "./containers/App";
 import * as serviceWorker from "./serviceWorker";
 import "./static/font.css";
 import "./static/base.css";
-
 
 const target = document.querySelector("#root");
 render(

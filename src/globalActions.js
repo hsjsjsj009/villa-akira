@@ -1,7 +1,11 @@
 import {
   CHANGE_BAR_COLOR,
   CHANGE_INNER_COLOR,
-  CHANGE_PAGE, LOAD_IMAGE, PLACE_IMAGE, READY
+  CHANGE_PAGE,
+  INDONESIA,
+  LOAD_IMAGE,
+  PLACE_IMAGE,
+  READY
 } from "./globalConstants";
 
 export const changePage = page => {
@@ -21,9 +25,13 @@ export function ready() {
 }
 
 export function loadImage() {
-  return {type:LOAD_IMAGE}
+  return { type: LOAD_IMAGE };
 }
 
 export function placeImage(listImage) {
-  return {type:PLACE_IMAGE,payload:listImage};
+  return { type: PLACE_IMAGE, payload: listImage };
+}
+
+export function indonesiaLanguage() {
+  return { type: INDONESIA };
 }

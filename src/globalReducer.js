@@ -1,20 +1,30 @@
 import {
   CHANGE_BAR_COLOR,
   CHANGE_INNER_COLOR,
-  CHANGE_PAGE, LOAD_IMAGE, PLACE_IMAGE, READY
+  CHANGE_PAGE,
+  INDONESIA,
+  LOAD_IMAGE,
+  PLACE_IMAGE,
+  READY
 } from "./globalConstants";
 
 const initialState = {
   page: 1,
   changeInnerColor: false,
   changeBarColor: false,
-  image:[],
-  imageStatus:false,
-  ready: false
+  image: [],
+  imageStatus: false,
+  ready: false,
+  indonesia: false
 };
 
 function globalReducer(state = initialState, action) {
   switch (action.type) {
+    case INDONESIA:
+      return {
+        ...state,
+        indonesia: !state.indonesia
+      };
     case PLACE_IMAGE:
       return {
         ...state,
@@ -28,7 +38,8 @@ function globalReducer(state = initialState, action) {
     case READY:
       return {
         ...state,
-        ready: true };
+        ready: true
+      };
     case CHANGE_INNER_COLOR:
       return {
         ...state,

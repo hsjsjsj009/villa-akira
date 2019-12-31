@@ -1,20 +1,36 @@
-import styled from 'styled-components';
+import styled from "styled-components";
+import { Paragraph } from "../../containers/Home/style";
 
-export const TestimoniContainer = styled.div`
-  height: 100%;
-  overflow-y: auto;
-`;
+export const TestimoniContainer = styled.div``;
 
 export const TestimoniCard = styled.div`
-   border-radius: 10px;
-   box-shadow: 0px 0px 15px lightgray;
-   min-height: 20rem;
-   max-height: 20rem;
-   min-width: 15rem;
-   max-width: 15rem;
-   padding: 20px;
-   margin: 0 1rem;
-   align-self: center;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px lightgray;
+  height: 100%;
+  width: auto;
+  padding: 20px;
+  margin: 1rem 1rem;
+  align-self: center;
+  & > ${Paragraph} {
+    @media screen and (min-width: 600px) {
+      height: 20rem;
+    }
+    @media screen and (min-width: 800px) {
+      height: 18rem;
+    }
+    @media screen and (min-width: 1024px) {
+      height: 19rem;
+    }
+    @media screen and (max-width: 550px) {
+      height: 12rem;
+    }
+    @media screen and (min-width: 1440px) {
+      height: 19rem;
+    }
+    @media screen and (min-width: 1920px) {
+      height: 13rem;
+    }
+  }
 `;
 
 export const SlideContainer = styled.div`
