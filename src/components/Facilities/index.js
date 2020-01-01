@@ -160,12 +160,17 @@ class Facilities extends React.PureComponent {
             >
               <ChangeAnimation>
                 {indonesia ?
-                    <Title key={123} className="mb-3">FASILITAS</Title>
+                    <Fragment key={123}>
+                      <Title className="mb-3">FASILITAS</Title>
+                      <Line color="#707070" size="8.5rem" />
+                    </Fragment>
                 :
-                    <Title key={234} className="mb-3">FACILITIES</Title>
+                    <Fragment key={234}>
+                      <Title className="mb-3">FACILITIES</Title>
+                      <Line color="#707070" size="9rem" />
+                    </Fragment>
                 }
               </ChangeAnimation>
-              <Line color="#707070" size="9rem" />
               <br />
               {this.props.max500 ?
                 <Fragment>

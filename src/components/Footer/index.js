@@ -8,9 +8,11 @@ import email from "../../static/FooterIcon/envelope.svg";
 import ig from "../../static/FooterIcon/instagram-logo.svg";
 import telephone from "../../static/FooterIcon/telephone.svg";
 import place from "../../static/FooterIcon/place.svg";
+import ChangeAnimation from "../ChangeAnimation";
 
 class Footer extends React.PureComponent {
   render() {
+    const {indonesia} = this.props;
     return (
       <footer>
         <FooterContainer>
@@ -20,7 +22,13 @@ class Footer extends React.PureComponent {
                 <img src={logo} className="img-fluid" alt="" />
               </Col>
               <Col md={5} lg={4} xl={3}>
-                <TitleFooter>ADDRESS</TitleFooter>
+                <ChangeAnimation>
+                  {indonesia ?
+                      <TitleFooter key={4}>ALAMAT</TitleFooter>
+                      :
+                      <TitleFooter key={12}>ADDRESS</TitleFooter>
+                  }
+                </ChangeAnimation>
                 <Row>
                   <Col xs={2} sm={1} md={3} xl={2}>
                     <img src={place} className="img-fluid" alt="" />
@@ -33,7 +41,13 @@ class Footer extends React.PureComponent {
                 </Row>
               </Col>
               <Col md={5} lg={4} xl={3}>
-                <TitleFooter>CONTACT</TitleFooter>
+                <ChangeAnimation>
+                  {indonesia ?
+                      <TitleFooter key={12}>KONTAK</TitleFooter>
+                      :
+                      <TitleFooter key={14}>CONTACT</TitleFooter>
+                  }
+                </ChangeAnimation>
                 <Row>
                   <Col xs={2} sm={1} md={3} xl={2}>
                     <img src={telephone} className="img-fluid" alt="" />
@@ -52,7 +66,13 @@ class Footer extends React.PureComponent {
                 </Row>
               </Col>
               <Col md={5} lg={4} xl={3}>
-                <TitleFooter>SOCIAL MEDIA</TitleFooter>
+                <ChangeAnimation>
+                  {indonesia ?
+                      <TitleFooter key={12}>SOSIAL MEDIA</TitleFooter>
+                      :
+                      <TitleFooter key={3}>SOCIAL MEDIA</TitleFooter>
+                  }
+                </ChangeAnimation>
                 <Row>
                   <Col xs={2} sm={1} md={3} xl={2}>
                     <img src={ig} className="img-fluid" alt="" />

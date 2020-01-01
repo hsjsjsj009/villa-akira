@@ -27,6 +27,16 @@
   }
 }
 
+.slick-dots > li.slick-active > button {
+  color: #46564a;
+}
+.slick-dots > li.slick-active > button::after {
+  color: #46564a;
+}
+.slick-dots > li.slick-active > button::before {
+  color: #46564a;
+}
+
 .part-container {
   height: 100%;
 }

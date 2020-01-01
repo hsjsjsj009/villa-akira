@@ -46,15 +46,20 @@ class Host extends React.Component {
             >
               <ChangeAnimation>
                 {indonesia ?
-                    <Title key={50} className="mb-3">
-                      TUAN RUMAH
-                    </Title>
+                    <Fragment key={50}>
+                      <Title className="mb-3">
+                        TUAN RUMAH
+                      </Title>
+                      <Line color="#707070" size="10.5rem"/>
+                    </Fragment>
                 :
-                    <Title key={12} className="mb-3">
-                      THE HOST
-                    </Title>}
+                    <Fragment key={12}>
+                      <Title className="mb-3">
+                        THE HOST
+                      </Title>
+                      <Line color="#707070" size="7rem" />
+                    </Fragment>}
               </ChangeAnimation>
-              <Line color="#707070" size="7rem" />
               <br />
               <ChangeAnimation>
                 {indonesia ?

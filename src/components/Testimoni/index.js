@@ -58,14 +58,21 @@ class Testimoni extends React.PureComponent {
           <div className="col text-center">
             <ChangeAnimation>
               {indonesia ?
-                  <Title>TESTIMONI</Title>
+                  <Fragment key={2}>
+                    <Title>TESTIMONI</Title>
+                    <Row className="justify-content-center">
+                      <Line color="#707070" size="8rem" />
+                    </Row>
+                  </Fragment>
                   :
-                  <Title>TESTIMONIALS</Title>
+                  <Fragment key={5}>
+                    <Title>TESTIMONIALS</Title>
+                    <Row className="justify-content-center">
+                      <Line color="#707070" size="11rem" />
+                    </Row>
+                  </Fragment>
               }
             </ChangeAnimation>
-            <Row className="justify-content-center">
-              <Line color="#707070" size="11rem" />
-            </Row>
           </div>
           <Row className="justify-content-center mt-3 align-content-center">
             {!this.props.max500 && (

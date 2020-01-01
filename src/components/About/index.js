@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Fragment} from "react";
 import PropTypes from "prop-types";
 
 import Container from "react-bootstrap/Container";
@@ -109,12 +109,17 @@ class About extends React.Component {
             <Col md={10} xl={4} className="align-self-end mx-2">
               <ChangeAnimation>
                 {!indonesia ?
-                    <Title key={1} className="mb-3">ABOUT VILLA AKIRA</Title>
+                    <Fragment key={1}>
+                      <Title className="mb-3">ABOUT VILLA AKIRA</Title>
+                      <Line color="#707070" size="15.4rem" className="float-left" />
+                    </Fragment>
                     :
-                    <Title key={2} className="mb-3">TENTANG VILLA AKIRA</Title>
+                    <Fragment key={2}>
+                      <Title className="mb-3">TENTANG VILLA AKIRA</Title>
+                      <Line color="#707070" size="17.5rem" className="float-left" />
+                    </Fragment>
                 }
               </ChangeAnimation>
-              <Line color="#707070" size="15.4rem" className="float-left" />
               <br />
               {this.props.max1024 ? (
                 <Row className="justify-content-center my-4">
@@ -200,7 +205,7 @@ class About extends React.Component {
               ) : null}
               <ChangeAnimation>
                 {indonesia ?
-                    <div key={2}>
+                    <Fragment key={2}>
                       <Paragraph>
                         Villa Akira terletak di Megamendung, Bogor, 870 m di atas permukaan laut, di atas bukit yang dikelilingi oleh tiga gunung, yaitu Gunung Salak, Gunung Pangrango dan Gunung Gede. Villa Akira hanya 15 menit dari Taman Safari dan banyak tempat wisata lainnya di Puncak.
                       </Paragraph>
@@ -216,9 +221,9 @@ class About extends React.Component {
                       <Paragraph>
                         Villa Akira adalah tempat yang paling cocok untuk orang-orang yang mencintai alam dan mencari ketenangan.
                       </Paragraph>
-                    </div>
+                    </Fragment>
                 :
-                <div key={1}>
+                <Fragment key={1}>
                   <Paragraph>
                     Villa Akira is located in Megamendung, Bogor, 870m above sea
                     level, on top of a hill surrounded by three mountains, namely
@@ -250,7 +255,7 @@ class About extends React.Component {
                   <Paragraph>
                     This is the most suitable place for people who love nature and look for tranquility.
                   </Paragraph>
-                </div>}
+                </Fragment>}
               </ChangeAnimation>
             </Col>
             {this.props.max1024 ? null : (

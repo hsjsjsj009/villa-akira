@@ -55,9 +55,9 @@ class Home extends React.Component {
             <Facilities {...queryProps} indonesia={this.props.indonesia} />
             <NightRates {...queryProps} indonesia={this.props.indonesia} />
             <Testimoni {...queryProps} indonesia={this.props.indonesia} />
+            <Footer indonesia={this.props.indonesia} />
           </React.Fragment>
         )}
-        <Footer />
       </HomeContainer>
     );
   }

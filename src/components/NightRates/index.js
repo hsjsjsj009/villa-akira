@@ -16,14 +16,21 @@ class NightRates extends React.Component {
           <div className="col text-center">
             <ChangeAnimation>
               {indonesia ?
-                  <Title key={5}>TARIF PER MALAM</Title>
+                  <Fragment key={5}>
+                    <Title>TARIF PER MALAM</Title>
+                    <Row className="justify-content-center">
+                      <Line color="#707070" size="12.5rem" />
+                    </Row>
+                  </Fragment>
               :
-                  <Title key={1}>NIGHTLY RATES</Title>
+                  <Fragment>
+                    <Title key={1}>NIGHTLY RATES</Title>
+                    <Row className="justify-content-center">
+                      <Line color="#707070" size="11rem" />
+                    </Row>
+                  </Fragment>
               }
             </ChangeAnimation>
-            <Row className="justify-content-center">
-              <Line color="#707070" size="11rem" />
-            </Row>
           </div>
           <Row className="my-5 justify-content-center">
             <CardRates className={this.props.max1024 ? "mx-3 my-3" : "mx-3"}>
