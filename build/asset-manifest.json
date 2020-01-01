@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.9dc4c6b7.chunk.css",
-    "main.js": "/static/js/main.5fd15adf.chunk.js",
-    "main.js.map": "/static/js/main.5fd15adf.chunk.js.map",
+    "main.css": "/static/css/main.9792e261.chunk.css",
+    "main.js": "/static/js/main.a18d87f9.chunk.js",
+    "main.js.map": "/static/js/main.a18d87f9.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.9a34bca9.js",
     "runtime-main.js.map": "/static/js/runtime-main.9a34bca9.js.map",
-    "static/css/2.f54a03e8.chunk.css": "/static/css/2.f54a03e8.chunk.css",
-    "static/js/2.6294152d.chunk.js": "/static/js/2.6294152d.chunk.js",
-    "static/js/2.6294152d.chunk.js.map": "/static/js/2.6294152d.chunk.js.map",
+    "static/css/2.a42e2d38.chunk.css": "/static/css/2.a42e2d38.chunk.css",
+    "static/js/2.35ad693d.chunk.js": "/static/js/2.35ad693d.chunk.js",
+    "static/js/2.35ad693d.chunk.js.map": "/static/js/2.35ad693d.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.2333376d8e6623f1d15e87eb23b96b6c.js": "/precache-manifest.2333376d8e6623f1d15e87eb23b96b6c.js",
+    "precache-manifest.d47d2d66545a8fdb6c976051b2a8b633.js": "/precache-manifest.d47d2d66545a8fdb6c976051b2a8b633.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/2.f54a03e8.chunk.css.map": "/static/css/2.f54a03e8.chunk.css.map",
-    "static/css/main.9dc4c6b7.chunk.css.map": "/static/css/main.9dc4c6b7.chunk.css.map",
-    "static/js/2.6294152d.chunk.js.LICENSE": "/static/js/2.6294152d.chunk.js.LICENSE",
+    "static/css/2.a42e2d38.chunk.css.map": "/static/css/2.a42e2d38.chunk.css.map",
+    "static/css/main.9792e261.chunk.css.map": "/static/css/main.9792e261.chunk.css.map",
+    "static/js/2.35ad693d.chunk.js.LICENSE": "/static/js/2.35ad693d.chunk.js.LICENSE",
     "static/media/0.png": "/static/media/0.544b40ec.png",
     "static/media/06 Big room_rev.png": "/static/media/06 Big room_rev.1ce9f1a4.png",
     "static/media/1.png": "/static/media/1.afb9557f.png",
@@ -36,13 +36,14 @@
     "static/media/log va wite.png": "/static/media/log va wite.8d56fc9c.png",
     "static/media/logo va white smaller.png": "/static/media/logo va white smaller.83a57424.png",
     "static/media/place.svg": "/static/media/place.49cfccb0.svg",
+    "static/media/slick-theme.css": "/static/media/slick.f97e3bbf.svg",
     "static/media/telephone.svg": "/static/media/telephone.85fe7ba8.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.9a34bca9.js",
-    "static/css/2.f54a03e8.chunk.css",
-    "static/js/2.6294152d.chunk.js",
-    "static/css/main.9dc4c6b7.chunk.css",
-    "static/js/main.5fd15adf.chunk.js"
+    "static/css/2.a42e2d38.chunk.css",
+    "static/js/2.35ad693d.chunk.js",
+    "static/css/main.9792e261.chunk.css",
+    "static/js/main.a18d87f9.chunk.js"
   ]
 }
