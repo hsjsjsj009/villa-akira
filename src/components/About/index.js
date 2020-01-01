@@ -17,6 +17,7 @@ import {
 import { Images, ImagesSlideShow } from "./photos";
 import "react-image-lightbox/style.css";
 import SlideShow from "../SlideShow";
+import ChangeAnimation from "../ChangeAnimation";
 
 class About extends React.Component {
   constructor(props) {
@@ -96,6 +97,7 @@ class About extends React.Component {
   };
 
   render() {
+    const {indonesia} = this.props;
     return (
       <AboutContainer id="about" className="part-container my-5">
         <Container style={{ height: "100%" }} fluid>
@@ -105,7 +107,13 @@ class About extends React.Component {
             style={{ flexWrap: "wrap-reverse" }}
           >
             <Col md={10} xl={4} className="align-self-end mx-2">
-              <Title className="mb-3">ABOUT VILLA AKIRA</Title>
+              <ChangeAnimation>
+                {!indonesia ?
+                    <Title key={1} className="mb-3">ABOUT VILLA AKIRA</Title>
+                    :
+                    <Title key={2} className="mb-3">TENTANG VILLA AKIRA</Title>
+                }
+              </ChangeAnimation>
               <Line color="#707070" size="15.4rem" className="float-left" />
               <br />
               {this.props.max1024 ? (
@@ -190,38 +198,60 @@ class About extends React.Component {
                   )}
                 </Row>
               ) : null}
-              <Paragraph>
-                Villa Akira is located in Megamendung, Bogor, 870m above sea
-                level, on top of a hill surrounded by three mountains, namely
-                Mount Salak, Mount Pangrango and Mount Gede. It is only 15
-                minutes away from Taman Safari (an animal theme park) and many
-                other tourist attractions in Puncak.
-              </Paragraph>
-              <Paragraph>
-                The land area is approx. 7,000 m<sup>2</sup> and the building
-                coverage is only 5 % which leaves the land with lots of trees
-                such as corns, cassavas, avocados, bananas, jack fruits, cloves,
-                mango and many other tropical trees. It is very green with cool
-                fresh air and breeze, so it is not necessary to have air
-                conditioning inside.
-              </Paragraph>
-              <Paragraph>
-                The design is a combination of modern and vernacular
-                architecture with lots of glass windows and openings which allow
-                air circulations. The asphalt roof tile and shape provide an
-                expression of a tropical house. The L-shape of the villa gives
-                the maximum use of the mountainous views.
-              </Paragraph>
-              <Paragraph>
-                It is a nice weekend get away from traffic and pollution, a real
-                serenity place with all required amenities and feel like home.
-                The topographic area is the best venue for hiking and outdoor
-                activities.
-              </Paragraph>
-              <Paragraph>
-                This is the most suitable place for people who love nature and
-                look for tranquility.
-              </Paragraph>
+              <ChangeAnimation>
+                {indonesia ?
+                    <div key={2}>
+                      <Paragraph>
+                        Villa Akira terletak di Megamendung, Bogor, 870 m di atas permukaan laut, di atas bukit yang dikelilingi oleh tiga gunung, yaitu Gunung Salak, Gunung Pangrango dan Gunung Gede. Villa Akira hanya 15 menit dari Taman Safari dan banyak tempat wisata lainnya di Puncak.
+                      </Paragraph>
+                      <Paragraph>
+                        Luas tanah Villa Akira berkisar 7.000 m<sup>2</sup> dengan cakupan bangunan hanya 5% sehingga meninggalkan banyak pohon seperti jagung, singkong, alpukat, pisang, nangka, cengkeh, mangga dan banyak pohon tropis lainnya. Tanah Villa Akira sangat hijau dengan udara segar dan angin sejuk, sehingga tidak perlu memiliki pendingin udara di dalam.
+                      </Paragraph>
+                      <Paragraph>
+                        Desain Villa Akira merupakan kombinasi arsitektur modern dan vernakular dengan banyak jendela kaca dan bukaan sehingga menciptakan sirkulasi udara. Genteng dan bentuk atap aspal memberikan ekspresi rumah tropis. Bentuk-L dari villa memaksimalkan penggunaan dari pemandangan pegunungan.
+                      </Paragraph>
+                      <Paragraph>
+                        Villa Akira adalah tempat berakhir pekan yang menyenangkan untuk menjauh dari lalu lintas dan polusi, sebuah ketenangan nyata dengan semua fasilitas yang diperlukan sehingga merasa seperti di rumah. Daerah topografi Villa Akira adalah tempat terbaik untuk kegiatan hiking dan outdoor.
+                      </Paragraph>
+                      <Paragraph>
+                        Villa Akira adalah tempat yang paling cocok untuk orang-orang yang mencintai alam dan mencari ketenangan.
+                      </Paragraph>
+                    </div>
+                :
+                <div key={1}>
+                  <Paragraph>
+                    Villa Akira is located in Megamendung, Bogor, 870m above sea
+                    level, on top of a hill surrounded by three mountains, namely
+                    Mount Salak, Mount Pangrango and Mount Gede. It is only 15
+                    minutes away from Taman Safari (an animal theme park) and many
+                    other tourist attractions in Puncak.
+                  </Paragraph>
+                  <Paragraph>
+                    The land area is approx. 7,000 m<sup>2</sup> and the building
+                    coverage is only 5 % which leaves the land with lots of trees
+                    such as corns, cassavas, avocados, bananas, jack fruits, cloves,
+                    mango and many other tropical trees. It is very green with cool
+                    fresh air and breeze, so it is not necessary to have air
+                    conditioning inside.
+                  </Paragraph>
+                  <Paragraph>
+                    The design is a combination of modern and vernacular
+                    architecture with lots of glass windows and openings which allow
+                    air circulations. The asphalt roof tile and shape provide an
+                    expression of a tropical house. The L-shape of the villa gives
+                    the maximum use of the mountainous views.
+                  </Paragraph>
+                  <Paragraph>
+                    It is a nice weekend get away from traffic and pollution, a real
+                    serenity place with all required amenities and feel like home.
+                    The topographic area is the best venue for hiking and outdoor
+                    activities.
+                  </Paragraph>
+                  <Paragraph>
+                    This is the most suitable place for people who love nature and look for tranquility.
+                  </Paragraph>
+                </div>}
+              </ChangeAnimation>
             </Col>
             {this.props.max1024 ? null : (
               <Col xl={5} className="align-self-center mx-2">

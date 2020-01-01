@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Fragment} from "react";
 import PropTypes from "prop-types";
 
 import Container from "react-bootstrap/Container";
@@ -18,6 +18,7 @@ import {
 } from "../../containers/Home/style";
 import { Fade } from "react-reveal";
 import Lightbox from "react-image-lightbox";
+import ChangeAnimation from "../ChangeAnimation";
 
 class Facilities extends React.PureComponent {
   constructor(props) {
@@ -86,6 +87,7 @@ class Facilities extends React.PureComponent {
   };
 
   render() {
+    const {indonesia} = this.props;
     return (
       <FacilitiesContainer className="part-container my-5" id="facilities">
         <Container fluid>
@@ -93,7 +95,62 @@ class Facilities extends React.PureComponent {
             className="justify-content-center"
             style={{ flexWrap: "wrap-reverse" }}
           >
+            {this.props.max500 ?
+            null:
+                <Col
+                    sm={5}
+                    md={5}
+                    className={
+                      this.props.max500
+                          ? "align-self-center my-4"
+                          : "align-self-center"
+                    }
+                >
+                  <SlideShow
+                      {...this.state}
+                      mainHeight={"15rem"}
+                      mainWidth={"15rem"}
+                      zoom
+                      zoomFunc={() => {
+                        this.setState({ viewer: true });
+                      }}
+                  />
+                  {this.state.viewer && (
+                      <Lightbox
+                          mainSrc={ImagesView[this.state.indexViewer]}
+                          nextSrc={
+                            ImagesView[(this.state.indexViewer + 1) % ImagesView.length]
+                          }
+                          prevSrc={
+                            ImagesView[
+                            (this.state.indexViewer + ImagesView.length - 1) %
+                            ImagesView.length
+                                ]
+                          }
+                          onMovePrevRequest={() =>
+                              this.setState({
+                                indexViewer:
+                                    (this.state.indexViewer + ImagesView.length - 1) %
+                                    ImagesView.length
+                              })
+                          }
+                          onMoveNextRequest={() =>
+                              this.setState({
+                                indexViewer:
+                                    (this.state.indexViewer + 1) % ImagesView.length
+                              })
+                          }
+                          onCloseRequest={() =>
+                              this.setState({
+                                viewer: false
+                              })
+                          }
+                      />
+                  )}
+                </Col>
+            }
             <Col
+                sm={5}
               md={5}
               className={
                 this.props.max500
@@ -101,66 +158,85 @@ class Facilities extends React.PureComponent {
                   : "align-self-center"
               }
             >
-              <SlideShow
-                {...this.state}
-                mainHeight={"15rem"}
-                mainWidth={"15rem"}
-                zoom
-                zoomFunc={() => {
-                  this.setState({ viewer: true });
-                }}
-              />
-              {this.state.viewer && (
-                <Lightbox
-                  mainSrc={ImagesView[this.state.indexViewer]}
-                  nextSrc={
-                    ImagesView[(this.state.indexViewer + 1) % ImagesView.length]
-                  }
-                  prevSrc={
-                    ImagesView[
-                      (this.state.indexViewer + ImagesView.length - 1) %
-                        ImagesView.length
-                    ]
-                  }
-                  onMovePrevRequest={() =>
-                    this.setState({
-                      indexViewer:
-                        (this.state.indexViewer + ImagesView.length - 1) %
-                        ImagesView.length
-                    })
-                  }
-                  onMoveNextRequest={() =>
-                    this.setState({
-                      indexViewer:
-                        (this.state.indexViewer + 1) % ImagesView.length
-                    })
-                  }
-                  onCloseRequest={() =>
-                    this.setState({
-                      viewer: false
-                    })
-                  }
-                />
-              )}
-            </Col>
-            <Col
-              md={5}
-              className={
-                this.props.max500
-                  ? "align-self-center my-4"
-                  : "align-self-center"
-              }
-            >
-              <Title className="mb-3">FACILITIES</Title>
+              <ChangeAnimation>
+                {indonesia ?
+                    <Title key={123} className="mb-3">FASILITAS</Title>
+                :
+                    <Title key={234} className="mb-3">FACILITIES</Title>
+                }
+              </ChangeAnimation>
               <Line color="#707070" size="9rem" />
               <br />
+              {this.props.max500 ?
+                <Fragment>
+                  <Col className="justify-content-center">
+                    <SlideShow
+                        {...this.state}
+                        mainHeight={"15rem"}
+                        mainWidth={"15rem"}
+                        zoom
+                        zoomFunc={() => {
+                          this.setState({ viewer: true });
+                        }}
+                    />
+                    <Row className="justify-content-center my-3">
+                      <LeftArrowButton className="mx-5" onClick={this.prevImage} />
+                      <RightArrowButton className="mx-5" onClick={this.nextImage} />
+                    </Row>
+                  </Col>
+                  {this.state.viewer && (
+                      <Lightbox
+                          mainSrc={ImagesView[this.state.indexViewer]}
+                          nextSrc={
+                            ImagesView[(this.state.indexViewer + 1) % ImagesView.length]
+                          }
+                          prevSrc={
+                            ImagesView[
+                            (this.state.indexViewer + ImagesView.length - 1) %
+                            ImagesView.length
+                                ]
+                          }
+                          onMovePrevRequest={() =>
+                              this.setState({
+                                indexViewer:
+                                    (this.state.indexViewer + ImagesView.length - 1) %
+                                    ImagesView.length
+                              })
+                          }
+                          onMoveNextRequest={() =>
+                              this.setState({
+                                indexViewer:
+                                    (this.state.indexViewer + 1) % ImagesView.length
+                              })
+                          }
+                          onCloseRequest={() =>
+                              this.setState({
+                                viewer: false
+                              })
+                          }
+                      />
+                  )}
+                </Fragment>
+                  :
+                  null
+              }
               <Fade when={!this.state.change}>
-                <h5>{Images[this.state.nowIndex].text}</h5>
+                <ChangeAnimation>
+                  {indonesia ?
+                      <h5 key={4} className={this.props.max500 ? "text-center" : ""}>{Images[this.state.nowIndex].textIndo}</h5>
+                  :
+                      <h5 key={10} className={this.props.max500 ? "text-center" : ""}>{Images[this.state.nowIndex].text}</h5>
+                  }
+                </ChangeAnimation>
               </Fade>
-              <Row className="justify-content-center mt-5">
-                <LeftArrowButton className="mx-5" onClick={this.prevImage} />
-                <RightArrowButton className="mx-5" onClick={this.nextImage} />
-              </Row>
+              {this.props.max500 ?
+                null
+                :
+                  <Row className="justify-content-center mt-5">
+                    <LeftArrowButton className="mx-5" onClick={this.prevImage} />
+                    <RightArrowButton className="mx-5" onClick={this.nextImage} />
+                  </Row>
+              }
             </Col>
           </Row>
         </Container>

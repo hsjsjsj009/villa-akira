@@ -11,24 +11,24 @@ export const TestimoniCard = styled.div`
   padding: 20px;
   margin: 1rem 1rem;
   align-self: center;
-  & > ${Paragraph} {
+  & > .react-reveal > ${Paragraph} {
     @media screen and (min-width: 600px) {
-      height: 20rem;
+      height: 15rem;
     }
     @media screen and (min-width: 800px) {
-      height: 18rem;
+      height: 13rem;
     }
     @media screen and (min-width: 1024px) {
-      height: 19rem;
+      height: 11rem;
     }
     @media screen and (max-width: 550px) {
-      height: 12rem;
+      height: 9rem;
     }
     @media screen and (min-width: 1440px) {
-      height: 19rem;
+      height: 15rem;
     }
     @media screen and (min-width: 1920px) {
-      height: 13rem;
+      height:9rem;
     }
   }
 `;

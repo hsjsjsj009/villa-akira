@@ -90,9 +90,7 @@ class Navbar extends React.Component {
                           </li>
                           <li>
                             <a href="#facilities" onClick={this.closeMenuFunc}>
-                              {this.props.indonesia
-                                ? "FASILITAS"
-                                : "FACILITIES"}
+                              {this.props.indonesia ? "FASILITAS" : "FACILITIES"}
                             </a>
                           </li>
                           <li>
@@ -102,9 +100,7 @@ class Navbar extends React.Component {
                           </li>
                           <li>
                             <a href="#testimoni" onClick={this.closeMenuFunc}>
-                              {this.props.indonesia
-                                ? "TESTIMONI"
-                                : "TESTIMONIALS"}
+                              {this.props.indonesia ? "TESTIMONI" : "TESTIMONIALS"}
                             </a>
                           </li>
                           <li>
