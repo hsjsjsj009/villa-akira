@@ -18,23 +18,25 @@ class Host extends React.Component {
             style={{ height: "inherit" }}
             className="justify-content-center align-content-center"
           >
-            <Col
-              xs={9}
-              md={5}
-              xl={3}
-              className={
-                this.props.max1024
-                  ? "align-self-center mx-auto mb-3"
-                  : "align-self-center mx-4"
-              }
-            >
-              <img
-                src={require("../../static/host.jpg")}
-                style={{ borderRadius: "50%" }}
-                className="img-fluid"
-                alt=""
-              />
-            </Col>
+            {this.props.max1024 ?
+            null :
+                <Col
+                    xs={9}
+                    md={5}
+                    xl={3}
+                    className={
+                      this.props.max1024
+                          ? "align-self-center mx-auto mb-3"
+                          : "align-self-center mx-4"
+                    }
+                >
+                  <img
+                      src={require("../../static/host.jpg")}
+                      style={{ borderRadius: "50%" }}
+                      className="img-fluid"
+                      alt=""
+                  />
+                </Col>}
             <Col
               md={10}
               xl={6}
@@ -61,6 +63,26 @@ class Host extends React.Component {
                     </Fragment>}
               </ChangeAnimation>
               <br />
+              {this.props.max1024 ?
+                  <Col
+                      xs={9}
+                      md={6}
+                      xl={3}
+                      className={
+                        this.props.max1024
+                            ? "align-self-center mx-auto my-4"
+                            : "align-self-center mx-4"
+                      }
+                  >
+                    <img
+                        src={require("../../static/host.jpg")}
+                        style={{ borderRadius: "50%" }}
+                        className="img-fluid"
+                        alt=""
+                    />
+                  </Col>
+                  :
+                  null}
               <ChangeAnimation>
                 {indonesia ?
                   <Fragment key={3}>

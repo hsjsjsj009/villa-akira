@@ -10,7 +10,8 @@ export const TitleFooter = styled.h6`
 `;
 
 export const ParagraphFooter = styled.p`
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: white;
   word-wrap: break-word;
+  margin: 0;
 `;
