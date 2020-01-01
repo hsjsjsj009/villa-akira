@@ -1,5 +1,5 @@
 import {
-  DEFAULT_ACTION,
+  DEFAULT_ACTION, LOADED,
   MAX_1024,
   MAX_500,
   MAX_768,
@@ -47,4 +47,8 @@ export function min768(query) {
   } else {
     return { type: MIN_768, payload: false };
   }
+}
+
+export function loaded(src){
+  return {type:LOADED,payload:src}
 }

@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 import { Fade } from "react-reveal";
 import { ImageSlideContainer } from "./style";
+import ImageLoading from "../ImageLoading";
 
 class ImageSlide extends React.Component {
   render() {
@@ -20,13 +21,12 @@ class ImageSlide extends React.Component {
                 }}
               >
                 <img
-                  src={this.props.src}
-                  alt=""
-                  style={{
-                    height: "inherit",
-                    position: "absolute",
-                    ...this.props.style
-                  }}
+                    src={this.props.src}
+                    style={{
+                      height: "inherit",
+                      position: "absolute",
+                      ...this.props.style
+                    }}
                 />
               </div>
             </div>
@@ -45,7 +45,6 @@ class ImageSlide extends React.Component {
               >
                 <img
                   src={this.props.src}
-                  alt=""
                   style={{
                     height: "inherit",
                     position: "absolute",

@@ -13,7 +13,7 @@ class LandingPage extends React.Component {
   render() {
     const { indonesia } = this.props;
     return (
-      <LandingPageContainer id="landing-page">
+      <LandingPageContainer id="landing-page" className="mb-3">
         <div id="landing-image-container">
           <img
             src={bg}
@@ -26,7 +26,7 @@ class LandingPage extends React.Component {
           />
         </div>
         <Row className="m-0 mr-2" style={{ height: "100%" }}>
-          <Col md={8} className="ml-auto align-self-center">
+          <Col md={8} lg={8} className="ml-auto align-self-center">
               <ChangeAnimation>
                   {indonesia ?
                     <LandingText key={10} indonesia={indonesia} className="text-right">

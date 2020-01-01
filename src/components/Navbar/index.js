@@ -66,7 +66,7 @@ class Navbar extends React.Component {
                   src={this.props.changeColor ? logoGreen : logoWhite}
                   alt=""
                   className="img-fluid my-1 ml-3"
-                  style={{ height: "3.3rem", cursor: "pointer" }}
+                  style={{ height: "3rem", cursor: "pointer" }}
                 />
               </a>
               {this.props.max1024 ? (
@@ -108,6 +108,9 @@ class Navbar extends React.Component {
                               onClick={() => {
                                 this.props.changeLanguage();
                                 this.closeMenuFunc();
+                              }}
+                              style={{
+                                cursor:"pointer"
                               }}
                             >
                               {this.props.indonesia ? <u>ID</u> : "ID"}/

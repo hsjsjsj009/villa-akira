@@ -7,7 +7,6 @@ import SmoothScroll from "smooth-scroll/dist/smooth-scroll";
 import Fade from "react-reveal/Fade";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-import $ from "jquery";
 import { BeatLoader } from "react-spinners";
 import { css } from "@emotion/core";
 import {

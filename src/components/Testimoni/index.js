@@ -53,7 +53,7 @@ class Testimoni extends React.PureComponent {
     };
     const {indonesia} = this.props;
     return (
-      <TestimoniContainer className="my-5" id="testimoni">
+      <TestimoniContainer className="mb-5" id="testimoni">
         <Container fluid>
           <div className="col text-center">
             <ChangeAnimation>

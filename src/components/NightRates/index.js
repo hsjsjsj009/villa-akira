@@ -11,7 +11,7 @@ class NightRates extends React.Component {
   render() {
     const {indonesia} = this.props;
     return (
-      <NightRatesContainer className="part-container my-5" id="night-rates">
+      <NightRatesContainer className="part-container mb-5" id="night-rates">
         <Container fluid>
           <div className="col text-center">
             <ChangeAnimation>
@@ -19,7 +19,7 @@ class NightRates extends React.Component {
                   <Fragment key={5}>
                     <Title>TARIF PER MALAM</Title>
                     <Row className="justify-content-center">
-                      <Line color="#707070" size="12.5rem" />
+                      <Line color="#707070" size="11rem" />
                     </Row>
                   </Fragment>
               :
@@ -32,7 +32,7 @@ class NightRates extends React.Component {
               }
             </ChangeAnimation>
           </div>
-          <Row className="my-5 justify-content-center">
+          <Row className="my-5 p-3 justify-content-center">
             <CardRates className={this.props.max1024 ? "mx-3 my-3" : "mx-3"}>
               <h4 style={{ color: "#707070" }} className="m-0 text-center">
                 IDR 3,500,000

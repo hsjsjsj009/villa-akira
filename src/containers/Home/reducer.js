@@ -1,6 +1,6 @@
 import { fromJS } from "immutable";
 import {
-  DEFAULT_ACTION,
+  DEFAULT_ACTION, LOADED,
   MAX_1024,
   MAX_500,
   MAX_768,
@@ -13,11 +13,17 @@ const initialState = {
   min768: false,
   min1024: false,
   max1024: false,
-  max768: false
+  max768: false,
+  loaded:[]
 };
 
 function homeReducer(state = initialState, action) {
   switch (action.type) {
+    case LOADED:
+      return {
+        ...state,
+        loaded:[...state.loaded,action.payload]
+      };
     case MIN_1024:
       return {
         ...state,

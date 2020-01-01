@@ -12,8 +12,9 @@ export const NavbarContainer = styled.div`
 export const NavBar = styled.div``;
 
 export const Menu = styled.h6`
+  font-size: 0.8rem;
   color: ${props => (props.changeColor ? "#46564A" : "white")};
-  margin: 0.3rem 1rem;
+  margin: 0.5rem;
   cursor: pointer;
 `;
 

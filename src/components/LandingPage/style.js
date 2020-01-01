@@ -14,7 +14,7 @@ export const LandingText = styled.h1`
   @media screen and (max-width: 550px) {
     font-size: ${props => (props.indonesia ? 2.1 : 2.7)}rem;
   }
-  @media screen and (min-width: 768px) and (max-width: 1024px) {
-    font-size: ${props => (props.indonesia ? 2.6 : 3.5)}rem;
+  @media screen and (min-width: 768px) and (max-width: 1440px) {
+    font-size: ${props => (props.indonesia ? 2.7 : 3.4)}rem;
   }
 `;

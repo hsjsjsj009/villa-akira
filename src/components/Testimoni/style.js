@@ -1,7 +1,9 @@
 import styled from "styled-components";
 import { Paragraph } from "../../containers/Home/style";
 
-export const TestimoniContainer = styled.div``;
+export const TestimoniContainer = styled.div`
+  margin-top: 6rem;
+`;
 
 export const TestimoniCard = styled.div`
   border-radius: 10px;

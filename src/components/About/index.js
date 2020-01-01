@@ -99,14 +99,14 @@ class About extends React.Component {
   render() {
     const {indonesia} = this.props;
     return (
-      <AboutContainer id="about" className="part-container my-5">
+      <AboutContainer id="about" className="part-container mb-5">
         <Container style={{ height: "100%" }} fluid>
           <Row
             style={{ height: "inherit" }}
             className="justify-content-center"
             style={{ flexWrap: "wrap-reverse" }}
           >
-            <Col md={10} xl={4} className="align-self-end mx-2">
+            <Col md={10} lg={4} xl={4} className="align-self-end mx-2">
               <ChangeAnimation>
                 {!indonesia ?
                     <Fragment key={1}>
@@ -259,7 +259,7 @@ class About extends React.Component {
               </ChangeAnimation>
             </Col>
             {this.props.max1024 ? null : (
-              <Col xl={5} className="align-self-center mx-2">
+              <Col lg={5} xl={5} className="align-self-center mx-2">
                 <Row className="my-2 justify-content-center">
                   <Col md={6} className="align-self-center">
                     <ImageBorder onClick={() => this.openViewer(0)}>

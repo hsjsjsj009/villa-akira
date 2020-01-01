@@ -12,7 +12,7 @@ class Host extends React.Component {
   render() {
     const {indonesia} = this.props;
     return (
-      <HostContainer className="my-5">
+      <HostContainer className="mb-5">
         <Container fluid style={{ height: "inherit" }}>
           <Row
             style={{ height: "inherit" }}

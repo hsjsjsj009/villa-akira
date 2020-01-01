@@ -89,7 +89,7 @@ class Facilities extends React.PureComponent {
   render() {
     const {indonesia} = this.props;
     return (
-      <FacilitiesContainer className="part-container my-5" id="facilities">
+      <FacilitiesContainer className="part-container mb-5" id="facilities">
         <Container fluid>
           <Row
             className="justify-content-center"

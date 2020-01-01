@@ -15,13 +15,13 @@ class Footer extends React.PureComponent {
     const {indonesia} = this.props;
     return (
       <footer>
-        <FooterContainer>
+        <FooterContainer className="mb-3">
           <Container fluid>
             <Row className="justify-content-center align-content-center">
-              <Col md={8} lg={10} xl={3}>
+              <Col xs={10} sm={3} md={3} lg={3} xl={2} className="align-self-center">
                 <img src={logo} className="img-fluid" alt="" />
               </Col>
-              <Col md={5} lg={4} xl={3}>
+              <Col xs={10} sm={3} md={3} lg={3} xl={2}>
                 <ChangeAnimation>
                   {indonesia ?
                       <TitleFooter key={4}>ALAMAT</TitleFooter>
@@ -30,17 +30,17 @@ class Footer extends React.PureComponent {
                   }
                 </ChangeAnimation>
                 <Row>
-                  <Col xs={2} sm={1} md={3} xl={2}>
+                  <Col xs sm md>
                     <img src={place} className="img-fluid" alt="" />
                   </Col>
-                  <Col className="p-0">
+                  <Col className="p-0" sm xs={10} md={9} xl={9}>
                     <ParagraphFooter>
                       Sukagalih, Megamendung, 16770 Bogor, Indonesia
                     </ParagraphFooter>
                   </Col>
                 </Row>
               </Col>
-              <Col md={5} lg={4} xl={3}>
+              <Col xs={10} sm={3} md={3} lg={3} xl={2}>
                 <ChangeAnimation>
                   {indonesia ?
                       <TitleFooter key={12}>KONTAK</TitleFooter>
@@ -48,24 +48,24 @@ class Footer extends React.PureComponent {
                       <TitleFooter key={14}>CONTACT</TitleFooter>
                   }
                 </ChangeAnimation>
-                <Row>
-                  <Col xs={2} sm={1} md={3} xl={2}>
+                <Row className={this.props.max500 || this.props.min1024 ? "mb-2" : ""}>
+                  <Col xs sm={1} md>
                     <img src={telephone} className="img-fluid" alt="" />
                   </Col>
-                  <Col className="p-0">
+                  <Col className="p-0 align-self-center" xs={10} md={9} xl={9}>
                     <ParagraphFooter>+62812 548 0468</ParagraphFooter>
                   </Col>
                 </Row>
                 <Row>
-                  <Col xs={2} sm={1} md={3} xl={2}>
+                  <Col xs sm md>
                     <img src={email} className="img-fluid" alt="" />
                   </Col>
-                  <Col className="p-0" xs={6} md={6}>
+                  <Col className="p-0 align-self-center" xs={10} md={9} xl={9}>
                     <ParagraphFooter>info.villaakira@gmail.com</ParagraphFooter>
                   </Col>
                 </Row>
               </Col>
-              <Col md={5} lg={4} xl={3}>
+              <Col xs={10} sm={3} md={3} lg={3} xl={2} className={this.props.max500 ? "mt-2" : ""}>
                 <ChangeAnimation>
                   {indonesia ?
                       <TitleFooter key={12}>SOSIAL MEDIA</TitleFooter>
@@ -74,10 +74,10 @@ class Footer extends React.PureComponent {
                   }
                 </ChangeAnimation>
                 <Row>
-                  <Col xs={2} sm={1} md={3} xl={2}>
+                  <Col xs sm={1} md>
                     <img src={ig} className="img-fluid" alt="" />
                   </Col>
-                  <Col className="p-0">
+                  <Col className="p-0" xs={10} md={9} xl={9}>
                     <ParagraphFooter>villa.akira</ParagraphFooter>
                   </Col>
                 </Row>

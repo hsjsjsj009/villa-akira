@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const NightRatesContainer = styled.div`
-
+  margin-top: 8.5rem;
 `;
 
 export const CardRates = styled.div`

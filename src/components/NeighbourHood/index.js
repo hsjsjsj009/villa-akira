@@ -201,7 +201,7 @@ class NeighbourHood extends React.Component {
                 {this.props.max1024 ?
                     null
                     :
-                    <Row className="justify-content-center mt-2">
+                    <Row className="justify-content-center mt-5">
                         <LeftArrowButton className="mx-5" onClick={this.prevImage} />
                         <RightArrowButton className="mx-5" onClick={this.nextImage} />
                     </Row>
