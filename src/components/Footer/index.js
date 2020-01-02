@@ -14,7 +14,7 @@ class Footer extends React.PureComponent {
   render() {
     const {indonesia} = this.props;
     return (
-        <FooterContainer className="mb-3">
+        <FooterContainer className="mt-2">
           <Container fluid>
             <Row className="justify-content-center align-content-center">
               <Col xs={10} sm={2} md={2} lg={2} xl={2} className="align-self-center">

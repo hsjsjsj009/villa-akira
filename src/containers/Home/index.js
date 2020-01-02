@@ -54,9 +54,7 @@ class Home extends React.Component {
             <NeighbourHood {...queryProps} indonesia={this.props.indonesia} />
             <Facilities {...queryProps} indonesia={this.props.indonesia} />
             <NightRates {...queryProps} indonesia={this.props.indonesia} />
-            <hr style={{border:"0.5px #46564A solid", width:"80%"}}/>
             <Testimoni {...queryProps} indonesia={this.props.indonesia} />
-            <hr style={{border:"0.5px #46564A solid", width:"80%"}} />
             <Footer {...queryProps} indonesia={this.props.indonesia} />
           </React.Fragment>
         )}
