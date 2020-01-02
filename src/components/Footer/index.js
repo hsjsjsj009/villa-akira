@@ -17,7 +17,7 @@ class Footer extends React.PureComponent {
         <FooterContainer className="mt-2">
           <Container fluid>
             <Row className="justify-content-center align-content-center">
-              <Col xs={10} sm={2} md={2} lg={2} xl={2} className="align-self-center">
+              <Col xs={10} sm={2} md={3} lg={2} xl={2} className="align-self-center">
                 <img src={logo} className="img-fluid" alt="" />
               </Col>
               <Col xs={10} sm={3} md={3} lg={3} xl={3}>

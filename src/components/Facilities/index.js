@@ -228,9 +228,9 @@ class Facilities extends React.PureComponent {
               <Fade when={!this.state.change}>
                 <ChangeAnimation>
                   {indonesia ?
-                      <h5 key={4} className={this.props.max500 ? "text-center" : ""}>{Images[this.state.nowIndex].textIndo}</h5>
+                      <h5 key={4} className={this.props.max500 ? "text-center" : ""} style={{color:"#707070"}}>{Images[this.state.nowIndex].textIndo}</h5>
                   :
-                      <h5 key={10} className={this.props.max500 ? "text-center" : ""}>{Images[this.state.nowIndex].text}</h5>
+                      <h5 key={10} className={this.props.max500 ? "text-center" : ""} style={{color:"#707070"}}>{Images[this.state.nowIndex].text}</h5>
                   }
                 </ChangeAnimation>
               </Fade>
