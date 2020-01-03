@@ -57,10 +57,12 @@
 .slick-dots > li.slick-active > button:before {
   color: #46564a;
 }
-.slick-dots .part-container {
+
+.part-container {
   height: 100%;
 }
-.slick-dots #landing-image-container::after {
+
+#landing-image-container::after {
   content: "";
   position: absolute;
   right: 0;
@@ -69,18 +71,19 @@
   height: 100%;
   background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.0895522) 70%, #ffffff 100%);
 }
-.slick-dots #book-now > a {
+
+#book-now > a {
   color: #46564a;
   background: #ffffff;
   padding: 15px;
   border-radius: 10px;
 }
-.slick-dots #book-now > a:hover {
+#book-now > a:hover {
   text-decoration: none;
   color: #46564a;
 }
 @media screen and (max-width: 550px) {
-  .slick-dots #book-now > a {
+  #book-now > a {
     font-size: 1.2rem;
   }
 }
