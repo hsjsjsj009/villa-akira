@@ -27,21 +27,40 @@
   }
 }
 
-.slick-dots > li.slick-active > button {
+.slick-dots > li {
   color: #46564a;
 }
-.slick-dots > li.slick-active > button::after {
+.slick-dots > li:hover {
   color: #46564a;
 }
-.slick-dots > li.slick-active > button::before {
+.slick-dots > li:hover::before {
   color: #46564a;
 }
-
-.part-container {
+.slick-dots > li::after {
+  color: #46564a;
+}
+.slick-dots > li::after:hover {
+  color: #46564a;
+}
+.slick-dots > li::before {
+  color: #46564a;
+}
+.slick-dots > li::before:hover {
+  color: #46564a;
+}
+.slick-dots li button:before {
+  color: #46564a;
+}
+.slick-dots li button:hover:before {
+  color: #46564a;
+}
+.slick-dots > li.slick-active > button:before {
+  color: #46564a;
+}
+.slick-dots .part-container {
   height: 100%;
 }
-
-#landing-image-container::after {
+.slick-dots #landing-image-container::after {
   content: "";
   position: absolute;
   right: 0;
@@ -50,19 +69,18 @@
   height: 100%;
   background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.0895522) 70%, #ffffff 100%);
 }
-
-#book-now > a {
+.slick-dots #book-now > a {
   color: #46564a;
   background: #ffffff;
   padding: 15px;
   border-radius: 10px;
 }
-#book-now > a:hover {
+.slick-dots #book-now > a:hover {
   text-decoration: none;
   color: #46564a;
 }
 @media screen and (max-width: 550px) {
-  #book-now > a {
+  .slick-dots #book-now > a {
     font-size: 1.2rem;
   }
 }
