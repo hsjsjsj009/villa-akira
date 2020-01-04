@@ -106,7 +106,7 @@ class Host extends React.Component {
                     studied English in Atma Jaya University in the same city.
                   </Paragraph>
                   <Paragraph>
-                    I love cooking all kind aof food. I always enjoy nature because
+                    I love cooking all kind of food. I always enjoy nature because
                     it gives me a sense of closeness to God and happiness. I also
                     enjoy meeting people because it allows me to learn culture and
                     understand about life.

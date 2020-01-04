@@ -95,12 +95,12 @@ class Testimoni extends React.PureComponent {
                         <ChangeAnimation>
                           {indonesia ?
                               <Fragment key={2+masterKey}>
-                                <Paragraph>{obj.messageIndo}</Paragraph>
+                                <Paragraph style={{fontSize:indonesia ? "0.7rem" : null}}>{obj.messageIndo}</Paragraph>
                                 <h6 style={{color:"#707070"}} className="text-center">{obj.dateIndo}</h6>
                               </Fragment>
                               :
                               <Fragment key={5+masterKey}>
-                                <Paragraph>{obj.message}</Paragraph>
+                                <Paragraph style={{fontSize:indonesia ? "0.7rem" : null}}>{obj.message}</Paragraph>
                                 <h6 style={{color:"#707070"}} className="text-center">{obj.date}</h6>
                               </Fragment>
                           }

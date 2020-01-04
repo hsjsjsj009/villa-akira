@@ -34,7 +34,7 @@ class LandingPage extends React.Component {
                     </LandingText>
                       :
                       <LandingText key={11} className="text-right">
-                          A HIDING PLACE WITH MOUNTAIN VIEW.
+                          A HIDING PLACE WITH MOUNTAINS VIEW.
                       </LandingText>
                   }
               </ChangeAnimation>

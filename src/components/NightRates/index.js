@@ -70,19 +70,19 @@ class NightRates extends React.Component {
             {indonesia ?
                 <Fragment key={122}>
                   <h4 className="text-center" style={{ color: "#707070" }}>
-                    CHECK-IN PADA PUKUL 1:00 PM
+                    CHECK-IN PADA PUKUL 2:00 PM
                   </h4>
                   <h4 className="text-center" style={{ color: "#707070" }}>
-                    CHECK-OUT PADA PUKUL 11:00 AM
+                    CHECK-OUT PADA PUKUL 12:00 PM
                   </h4>
                 </Fragment>
               :
                 <Fragment key={299}>
                   <h4 className="text-center" style={{ color: "#707070" }}>
-                    CHECK-IN AT 1:00 PM
+                    CHECK-IN AT 2:00 PM
                   </h4>
                   <h4 className="text-center" style={{ color: "#707070" }}>
-                    CHECK-OUT AT 11:00 AM
+                    CHECK-OUT AT 12:00 PM
                   </h4>
                 </Fragment>
             }
