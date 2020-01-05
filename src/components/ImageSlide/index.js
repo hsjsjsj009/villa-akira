@@ -28,7 +28,7 @@ class ImageSlide extends React.Component {
                         <Row
                             className="justify-content-center align-content-center"
                             style={{height:"inherit",width:"inherit"}}>
-                          <ClipLoader
+                          <BeatLoader
                               css={css`
                                         display: flex;
                                         justify-content: center;

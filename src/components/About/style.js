@@ -9,7 +9,7 @@ export const ImageBorder = styled.div`
   height: inherit;
   width: inherit;
   
-  & > img{
+  & img{
   cursor: pointer;
   transition: 0.5s;
   object-fit: cover;

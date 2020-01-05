@@ -18,6 +18,8 @@ import { Images, ImagesSlideShow } from "./photos";
 import "react-image-lightbox/style.css";
 import SlideShow from "../SlideShow";
 import ChangeAnimation from "../ChangeAnimation";
+import ImageLoading from "../ImageLoading";
+import {Fade} from "react-reveal";
 
 class About extends React.Component {
   constructor(props) {
@@ -264,10 +266,9 @@ class About extends React.Component {
                   <Col md={6} className="align-self-center">
                     <ImageBorder onClick={() => this.openViewer(0)}>
                       <img
-                        src={require("../../static/AboutCropped/0.png")}
-                        alt=""
-                        className="img-fluid"
-                      />
+                          src={require("../../static/AboutCropped/0.png")}
+                          className="img-fluid"
+                          />
                     </ImageBorder>
                   </Col>
                   <Col md={3} className="align-self-center">
@@ -276,20 +277,18 @@ class About extends React.Component {
                       onClick={() => this.openViewer(1)}
                     >
                       <img
-                        src={require("../../static/AboutCropped/1.png")}
-                        className="img-fluid"
-                        alt=""
-                      />
+                          src={require("../../static/AboutCropped/1.png")}
+                          className="img-fluid"
+                          />
                     </ImageBorder>
                     <ImageBorder
                       className="my-2"
                       onClick={() => this.openViewer(2)}
                     >
                       <img
-                        src={require("../../static/AboutCropped/2.png")}
-                        className="img-fluid"
-                        alt=""
-                      />
+                          src={require("../../static/AboutCropped/2.png")}
+                          className="img-fluid"
+                          />
                     </ImageBorder>
                   </Col>
                 </Row>
@@ -301,9 +300,8 @@ class About extends React.Component {
                         onClick={() => this.openViewer(3)}
                       >
                         <img
-                          src={require("../../static/AboutCropped/3.png")}
-                          className="img-fluid"
-                          alt=""
+                            src={require("../../static/AboutCropped/3.png")}
+                            className="img-fluid"
                         />
                       </ImageBorder>
                       <ImageBorder
@@ -311,20 +309,19 @@ class About extends React.Component {
                         className="my-2"
                         onClick={() => this.openViewer(4)}
                       >
-                        <img
-                          src={require("../../static/AboutCropped/4.png")}
-                          className="img-fluid"
-                          alt=""
-                        />
+                          <img
+                              src={require("../../static/AboutCropped/4.png")}
+                              className="img-fluid"
+                          />
                       </ImageBorder>
                     </Col>
                     <Col md={6} className="align-self-center">
                       <ImageBorder onClick={() => this.openViewer(5)}>
-                        <img
-                          src={require("../../static/AboutCropped/5.png")}
-                          alt=""
-                          className="img-fluid"
-                        />
+                          <img
+                              src={require("../../static/AboutCropped/5.png")}
+                              className="img-fluid"
+                              alt="Loading"
+                          />
                       </ImageBorder>
                     </Col>
                   </Row>
