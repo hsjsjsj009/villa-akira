@@ -1,15 +1,8 @@
 import React from "react";
-import PropTypes from "prop-types";
 
-import { Fade } from "react-reveal";
 import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import { Images } from "../NeighbourHood/images";
 import { SlideShowContainer } from "./style";
 import ImageSlide from "../ImageSlide";
-import {Container} from "react-bootstrap";
-import {ClipLoader} from "react-spinners";
-import {css} from "@emotion/core";
 
 class SlideShow extends React.Component {
     constructor(props) {

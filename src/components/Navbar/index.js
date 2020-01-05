@@ -1,9 +1,6 @@
 import React from "react";
-import PropTypes from "prop-types";
 import Container from "react-bootstrap/Container";
-import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import { MobileView, BrowserView } from "react-device-detect";
 import { Fade } from "react-reveal";
 import logoWhite from "../../static/logo va white smaller.png";
 import logoGreen from "../../static/log va grin.png";

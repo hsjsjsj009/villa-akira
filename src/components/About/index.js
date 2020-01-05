@@ -1,5 +1,4 @@
 import React, {Fragment} from "react";
-import PropTypes from "prop-types";
 
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -18,8 +17,6 @@ import { Images, ImagesSlideShow } from "./photos";
 import "react-image-lightbox/style.css";
 import SlideShow from "../SlideShow";
 import ChangeAnimation from "../ChangeAnimation";
-import ImageLoading from "../ImageLoading";
-import {Fade} from "react-reveal";
 
 class About extends React.Component {
   constructor(props) {
@@ -38,6 +35,8 @@ class About extends React.Component {
   }
 
   openViewer = index => {
+    document.body.style.height = "100vh";
+    document.body.style.overflow = "hidden";
     this.setState({
       showViewer: true,
       indexPhoto: index
@@ -150,7 +149,11 @@ class About extends React.Component {
                     mainHeight={"12rem"}
                     mainWidth={"10rem"}
                     zoom
-                    zoomFunc={() => this.setState({ showViewer: true })}
+                    zoomFunc={() => {
+                      document.body.style.height = "100vh";
+                      document.body.style.overflow = "hidden";
+                      this.setState({ showViewer: true })
+                    }}
                   />
                   <SlideHover className="mx-5 align-self-center">
                     <Circle
@@ -196,10 +199,13 @@ class About extends React.Component {
                             (this.state.indexViewer + 1) % Images.length
                         })
                       }
-                      onCloseRequest={() =>
-                        this.setState({
-                          showViewer: false
-                        })
+                      onCloseRequest={() => {
+                          document.body.style.height = "";
+                          document.body.style.overflow = "";
+                          this.setState({
+                            showViewer: false
+                          })
+                        }
                       }
                     />
                   )}
@@ -350,10 +356,13 @@ class About extends React.Component {
                         indexPhoto: (this.state.indexPhoto + 1) % Images.length
                       })
                     }
-                    onCloseRequest={() =>
-                      this.setState({
-                        showViewer: false
-                      })
+                    onCloseRequest={() => {
+                        document.body.style.height = "";
+                        document.body.style.overflow = "";
+                        this.setState({
+                          showViewer: false
+                        })
+                      }
                     }
                   />
                 )}

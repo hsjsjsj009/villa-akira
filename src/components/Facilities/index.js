@@ -1,5 +1,4 @@
 import React, {Fragment} from "react";
-import PropTypes from "prop-types";
 
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -8,12 +7,9 @@ import { FacilitiesContainer } from "./style";
 import { Images, ImagesView } from "./images";
 import SlideShow from "../SlideShow";
 import {
-  Arrow,
-  Circle,
   LeftArrowButton,
   Line,
   RightArrowButton,
-  SlideHover,
   Title
 } from "../../containers/Home/style";
 import { Fade } from "react-reveal";
@@ -112,6 +108,8 @@ class Facilities extends React.PureComponent {
                       mainWidth={"15rem"}
                       zoom
                       zoomFunc={() => {
+                        document.body.style.height = "100vh";
+                        document.body.style.overflow = "hidden";
                         this.setState({ viewer: true });
                       }}
                   />
@@ -140,10 +138,13 @@ class Facilities extends React.PureComponent {
                                     (this.state.indexViewer + 1) % ImagesView.length
                               })
                           }
-                          onCloseRequest={() =>
+                          onCloseRequest={() =>{
+                              document.body.style.height = "";
+                              document.body.style.overflow = "";
                               this.setState({
                                 viewer: false
                               })
+                            }
                           }
                       />
                   )}
@@ -214,10 +215,13 @@ class Facilities extends React.PureComponent {
                                     (this.state.indexViewer + 1) % ImagesView.length
                               })
                           }
-                          onCloseRequest={() =>
+                          onCloseRequest={() =>{
+                              document.body.style.height = "";
+                              document.body.style.overflow = "";
                               this.setState({
                                 viewer: false
                               })
+                            }
                           }
                       />
                   )}

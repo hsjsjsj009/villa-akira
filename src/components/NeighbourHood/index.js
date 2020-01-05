@@ -1,23 +1,18 @@
 import React, {Fragment} from "react";
-import PropTypes from "prop-types";
 
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { NeighbourHoodContainer } from "./style";
 import {
-  Arrow,
-  Circle,
   LeftArrowButton,
   Line,
   Paragraph,
   RightArrowButton,
-  SlideHover,
   Title
 } from "../../containers/Home/style";
 import SlideShow from "../SlideShow";
-import {ImageLeft, ImageRight, Images, ImagesBig} from "./images";
-import { isMobile } from "react-device-detect";
+import {ImageLeft, ImageRight, Images} from "./images";
 import ChangeAnimation from "../ChangeAnimation";
 import {Fade} from "react-reveal";
 

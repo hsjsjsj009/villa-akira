@@ -1,4 +1,3 @@
-import { fromJS } from "immutable";
 import {
   DEFAULT_ACTION, LOADED,
   MAX_1024,

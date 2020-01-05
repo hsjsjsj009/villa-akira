@@ -1,7 +1,6 @@
 import React, {Fragment} from "react";
-import PropTypes from "prop-types";
 
-import { SlideContainer, TestimoniCard, TestimoniContainer } from "./style";
+import { TestimoniCard, TestimoniContainer } from "./style";
 import {
   LeftArrowButton,
   Line,

@@ -1,10 +1,8 @@
 import React, {Fragment} from "react";
-import PropTypes from "prop-types";
 
 import { CardRates, NightRatesContainer } from "./style";
 import { Line, Paragraph, Title } from "../../containers/Home/style";
 import { Container, Row } from "react-bootstrap";
-import { isMobile } from "react-device-detect";
 import ChangeAnimation from "../ChangeAnimation";
 
 class NightRates extends React.Component {

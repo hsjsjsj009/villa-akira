@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes, { func } from "prop-types";
 
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";

@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 import { FooterContainer, ParagraphFooter, TitleFooter } from "./style";
 import { Col, Container, Row } from "react-bootstrap";

@@ -1,11 +1,10 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 import { Fade } from "react-reveal";
 import {ImageSlideContainer, LoadingWrapper} from "./style";
 import {Container} from "react-bootstrap";
 import Row from "react-bootstrap/Row";
-import {BeatLoader, ClipLoader} from "react-spinners";
+import {BeatLoader} from "react-spinners";
 import {css} from "@emotion/core";
 
 class ImageSlide extends React.Component {

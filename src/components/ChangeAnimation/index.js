@@ -1,7 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-import { ChangeAnimationContainer } from './style';
 import {Fade} from "react-reveal";
 
 class ChangeAnimation extends React.Component {
