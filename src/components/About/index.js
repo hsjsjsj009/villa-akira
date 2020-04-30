@@ -1,4 +1,4 @@
-import React, {Fragment} from "react";
+import React, { Fragment } from "react";
 
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -17,6 +17,7 @@ import { Images, ImagesSlideShow } from "./photos";
 import "react-image-lightbox/style.css";
 import SlideShow from "../SlideShow";
 import ChangeAnimation from "../ChangeAnimation";
+import axios from "axios";
 
 class About extends React.Component {
   constructor(props) {
@@ -98,7 +99,7 @@ class About extends React.Component {
   };
 
   render() {
-    const {indonesia} = this.props;
+    const { indonesia } = this.props;
     return (
       <AboutContainer id="about" className="part-container mb-5">
         <Container style={{ height: "100%" }} fluid>
@@ -109,17 +110,25 @@ class About extends React.Component {
           >
             <Col md={10} lg={4} xl={4} className="align-self-end mx-2">
               <ChangeAnimation>
-                {!indonesia ?
-                    <Fragment key={1}>
-                      <Title className="mb-3">ABOUT VILLA AKIRA</Title>
-                      <Line color="#707070" size="15.4rem" className="float-left" />
-                    </Fragment>
-                    :
-                    <Fragment key={2}>
-                      <Title className="mb-3">TENTANG VILLA AKIRA</Title>
-                      <Line color="#707070" size="17.5rem" className="float-left" />
-                    </Fragment>
-                }
+                {!indonesia ? (
+                  <Fragment key={1}>
+                    <Title className="mb-3">ABOUT VILLA AKIRA</Title>
+                    <Line
+                      color="#707070"
+                      size="15.4rem"
+                      className="float-left"
+                    />
+                  </Fragment>
+                ) : (
+                  <Fragment key={2}>
+                    <Title className="mb-3">TENTANG VILLA AKIRA</Title>
+                    <Line
+                      color="#707070"
+                      size="17.5rem"
+                      className="float-left"
+                    />
+                  </Fragment>
+                )}
               </ChangeAnimation>
               <br />
               {this.props.max1024 ? (
@@ -152,7 +161,7 @@ class About extends React.Component {
                     zoomFunc={() => {
                       document.body.style.height = "100vh";
                       document.body.style.overflow = "hidden";
-                      this.setState({ showViewer: true })
+                      this.setState({ showViewer: true });
                     }}
                   />
                   <SlideHover className="mx-5 align-self-center">
@@ -200,70 +209,92 @@ class About extends React.Component {
                         })
                       }
                       onCloseRequest={() => {
-                          document.body.style.height = "";
-                          document.body.style.overflow = "";
-                          this.setState({
-                            showViewer: false
-                          })
-                        }
-                      }
+                        document.body.style.height = "";
+                        document.body.style.overflow = "";
+                        this.setState({
+                          showViewer: false
+                        });
+                      }}
                     />
                   )}
                 </Row>
               ) : null}
               <ChangeAnimation>
-                {indonesia ?
-                    <Fragment key={2}>
-                      <Paragraph>
-                        Villa Akira terletak di Megamendung, Bogor, 870 m di atas permukaan laut, di atas bukit yang dikelilingi oleh tiga gunung, yaitu Gunung Salak, Gunung Pangrango dan Gunung Gede. Villa Akira hanya 15 menit dari Taman Safari dan banyak tempat wisata lainnya di Puncak.
-                      </Paragraph>
-                      <Paragraph>
-                        Luas tanah Villa Akira berkisar 7.000 m<sup>2</sup> dengan cakupan bangunan hanya 5% sehingga meninggalkan banyak pohon seperti jagung, singkong, alpukat, pisang, nangka, cengkeh, mangga dan banyak pohon tropis lainnya. Tanah Villa Akira sangat hijau dengan udara segar dan angin sejuk, sehingga tidak perlu memiliki pendingin udara di dalam.
-                      </Paragraph>
-                      <Paragraph>
-                        Desain Villa Akira merupakan kombinasi arsitektur modern dan vernakular dengan banyak jendela kaca dan bukaan sehingga menciptakan sirkulasi udara. Genteng dan bentuk atap aspal memberikan ekspresi rumah tropis. Bentuk-L dari villa memaksimalkan penggunaan dari pemandangan pegunungan.
-                      </Paragraph>
-                      <Paragraph>
-                        Villa Akira adalah tempat berakhir pekan yang menyenangkan untuk menjauh dari lalu lintas dan polusi, sebuah ketenangan nyata dengan semua fasilitas yang diperlukan sehingga merasa seperti di rumah. Daerah topografi Villa Akira adalah tempat terbaik untuk kegiatan hiking dan outdoor.
-                      </Paragraph>
-                      <Paragraph>
-                        Villa Akira adalah tempat yang paling cocok untuk orang-orang yang mencintai alam dan mencari ketenangan.
-                      </Paragraph>
-                    </Fragment>
-                :
-                <Fragment key={1}>
-                  <Paragraph>
-                    Villa Akira is located in Megamendung, Bogor, 870m above sea
-                    level, on top of a hill surrounded by three mountains, namely
-                    Mount Salak, Mount Pangrango and Mount Gede. It is only 15
-                    minutes away from Taman Safari (an animal theme park) and many
-                    other tourist attractions in Puncak.
-                  </Paragraph>
-                  <Paragraph>
-                    The land area is approx. 7,000 m<sup>2</sup> and the building
-                    coverage is only 5 % which leaves the land with lots of trees
-                    such as corns, cassavas, avocados, bananas, jack fruits, cloves,
-                    mango and many other tropical trees. It is very green with cool
-                    fresh air and breeze, so it is not necessary to have air
-                    conditioning inside.
-                  </Paragraph>
-                  <Paragraph>
-                    The design is a combination of modern and vernacular
-                    architecture with lots of glass windows and openings which allow
-                    air circulations. The asphalt roof tile and shape provide an
-                    expression of a tropical house. The L-shape of the villa gives
-                    the maximum use of the mountainous views.
-                  </Paragraph>
-                  <Paragraph>
-                    It is a nice weekend get away from traffic and pollution, a real
-                    serenity place with all required amenities and feel like home.
-                    The topographic area is the best venue for hiking and outdoor
-                    activities.
-                  </Paragraph>
-                  <Paragraph>
-                    This is the most suitable place for people who love nature and look for tranquility.
-                  </Paragraph>
-                </Fragment>}
+                {indonesia ? (
+                  <Fragment key={2}>
+                    <Paragraph>
+                      Villa Akira terletak di Megamendung, Bogor, 870 m di atas
+                      permukaan laut, di atas bukit yang dikelilingi oleh tiga
+                      gunung, yaitu Gunung Salak, Gunung Pangrango dan Gunung
+                      Gede. Villa Akira hanya 15 menit dari Taman Safari dan
+                      banyak tempat wisata lainnya di Puncak.
+                    </Paragraph>
+                    <Paragraph>
+                      Luas tanah Villa Akira berkisar 7.000 m<sup>2</sup> dengan
+                      cakupan bangunan hanya 5% sehingga meninggalkan banyak
+                      pohon seperti jagung, singkong, alpukat, pisang, nangka,
+                      cengkeh, mangga dan banyak pohon tropis lainnya. Tanah
+                      Villa Akira sangat hijau dengan udara segar dan angin
+                      sejuk, sehingga tidak perlu memiliki pendingin udara di
+                      dalam.
+                    </Paragraph>
+                    <Paragraph>
+                      Desain Villa Akira merupakan kombinasi arsitektur modern
+                      dan vernakular dengan banyak jendela kaca dan bukaan
+                      sehingga menciptakan sirkulasi udara. Genteng dan bentuk
+                      atap aspal memberikan ekspresi rumah tropis. Bentuk-L dari
+                      villa memaksimalkan penggunaan dari pemandangan
+                      pegunungan.
+                    </Paragraph>
+                    <Paragraph>
+                      Villa Akira adalah tempat berakhir pekan yang menyenangkan
+                      untuk menjauh dari lalu lintas dan polusi, sebuah
+                      ketenangan nyata dengan semua fasilitas yang diperlukan
+                      sehingga merasa seperti di rumah. Daerah topografi Villa
+                      Akira adalah tempat terbaik untuk kegiatan hiking dan
+                      outdoor.
+                    </Paragraph>
+                    <Paragraph>
+                      Villa Akira adalah tempat yang paling cocok untuk
+                      orang-orang yang mencintai alam dan mencari ketenangan.
+                    </Paragraph>
+                  </Fragment>
+                ) : (
+                  <Fragment key={1}>
+                    <Paragraph>
+                      Villa Akira is located in Megamendung, Bogor, 870m above
+                      sea level, on top of a hill surrounded by three mountains,
+                      namely Mount Salak, Mount Pangrango and Mount Gede. It is
+                      only 15 minutes away from Taman Safari (an animal theme
+                      park) and many other tourist attractions in Puncak.
+                    </Paragraph>
+                    <Paragraph>
+                      The land area is approx. 7,000 m<sup>2</sup> and the
+                      building coverage is only 5 % which leaves the land with
+                      lots of trees such as corns, cassavas, avocados, bananas,
+                      jack fruits, cloves, mango and many other tropical trees.
+                      It is very green with cool fresh air and breeze, so it is
+                      not necessary to have air conditioning inside.
+                    </Paragraph>
+                    <Paragraph>
+                      The design is a combination of modern and vernacular
+                      architecture with lots of glass windows and openings which
+                      allow air circulations. The asphalt roof tile and shape
+                      provide an expression of a tropical house. The L-shape of
+                      the villa gives the maximum use of the mountainous views.
+                    </Paragraph>
+                    <Paragraph>
+                      It is a nice weekend get away from traffic and pollution,
+                      a real serenity place with all required amenities and feel
+                      like home. The topographic area is the best venue for
+                      hiking and outdoor activities.
+                    </Paragraph>
+                    <Paragraph>
+                      This is the most suitable place for people who love nature
+                      and look for tranquility.
+                    </Paragraph>
+                  </Fragment>
+                )}
               </ChangeAnimation>
             </Col>
             {this.props.max1024 ? null : (
@@ -272,9 +303,9 @@ class About extends React.Component {
                   <Col md={6} className="align-self-center">
                     <ImageBorder onClick={() => this.openViewer(0)}>
                       <img
-                          src={require("../../static/AboutCropped/0.png")}
-                          className="img-fluid"
-                          />
+                        src={require("../../static/AboutCropped/0.png")}
+                        className="img-fluid"
+                      />
                     </ImageBorder>
                   </Col>
                   <Col md={3} className="align-self-center">
@@ -283,18 +314,18 @@ class About extends React.Component {
                       onClick={() => this.openViewer(1)}
                     >
                       <img
-                          src={require("../../static/AboutCropped/1.png")}
-                          className="img-fluid"
-                          />
+                        src={require("../../static/AboutCropped/1.png")}
+                        className="img-fluid"
+                      />
                     </ImageBorder>
                     <ImageBorder
                       className="my-2"
                       onClick={() => this.openViewer(2)}
                     >
                       <img
-                          src={require("../../static/AboutCropped/2.png")}
-                          className="img-fluid"
-                          />
+                        src={require("../../static/AboutCropped/2.png")}
+                        className="img-fluid"
+                      />
                     </ImageBorder>
                   </Col>
                 </Row>
@@ -306,8 +337,8 @@ class About extends React.Component {
                         onClick={() => this.openViewer(3)}
                       >
                         <img
-                            src={require("../../static/AboutCropped/3.png")}
-                            className="img-fluid"
+                          src={require("../../static/AboutCropped/3.png")}
+                          className="img-fluid"
                         />
                       </ImageBorder>
                       <ImageBorder
@@ -315,19 +346,19 @@ class About extends React.Component {
                         className="my-2"
                         onClick={() => this.openViewer(4)}
                       >
-                          <img
-                              src={require("../../static/AboutCropped/4.png")}
-                              className="img-fluid"
-                          />
+                        <img
+                          src={require("../../static/AboutCropped/4.png")}
+                          className="img-fluid"
+                        />
                       </ImageBorder>
                     </Col>
                     <Col md={6} className="align-self-center">
                       <ImageBorder onClick={() => this.openViewer(5)}>
-                          <img
-                              src={require("../../static/AboutCropped/5.png")}
-                              className="img-fluid"
-                              alt="Loading"
-                          />
+                        <img
+                          src={require("../../static/AboutCropped/5.png")}
+                          className="img-fluid"
+                          alt="Loading"
+                        />
                       </ImageBorder>
                     </Col>
                   </Row>
@@ -357,13 +388,12 @@ class About extends React.Component {
                       })
                     }
                     onCloseRequest={() => {
-                        document.body.style.height = "";
-                        document.body.style.overflow = "";
-                        this.setState({
-                          showViewer: false
-                        })
-                      }
-                    }
+                      document.body.style.height = "";
+                      document.body.style.overflow = "";
+                      this.setState({
+                        showViewer: false
+                      });
+                    }}
                   />
                 )}
               </Col>
